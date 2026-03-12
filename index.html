@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Nicky Ng — Data & AI</title>
+  <meta name="description" content="Nicky Ng — data analyst and AI enthusiast based in Singapore." />
+
+  <!-- Fonts: DM Sans (body) + Lora (headings) from Google Fonts -->
+  <!-- Two fonts, one request. The display=swap param stops invisible text
+       during load — the browser shows a fallback font immediately. -->
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lora:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="css/style.css" />
+  <link rel="stylesheet" href="css/home.css" />
+</head>
+
+<body>
+
+  <!-- ============================================================
+       Navigation
+       aria-current="page" tells screen readers which link is active.
+       We set it manually on each page's own nav link.
+       ============================================================ -->
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a href="index.html" class="nav-home">Nicky Ng</a>
+      <ul class="nav-links" role="list">
+        <li><a href="index.html" aria-current="page">About</a></li>
+        <li><a href="pages/projects.html">Projects</a></li>
+        <li><a href="skills-library/index.html">Skills Library</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <!-- ============================================================
+       Main content
+       ============================================================ -->
+  <main>
+
+    <!-- Hero — name and one-line summary -->
+    <section class="page-section hero-section" aria-label="Introduction">
+      <div class="container">
+        <p class="hero-label">Hello, I'm</p>
+        <h1 class="hero-name">Nicky Ng</h1>
+        <p class="hero-tagline">
+          Data analyst and AI practitioner based in Singapore.<br />
+          I turn messy data into decisions, and build tools that help people work smarter.
+        </p>
+        <div class="hero-links">
+          <a href="https://www.linkedin.com/in/nickyngkw/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+          <a href="https://github.com/ahjimomo" target="_blank" rel="noopener noreferrer">GitHub</a>
+          <a href="https://public.tableau.com/app/profile/nicky.ng/vizzes" target="_blank" rel="noopener noreferrer">Tableau</a>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- About -->
+    <section class="page-section" aria-labelledby="about-heading">
+      <div class="container">
+        <h2 id="about-heading">About</h2>
+        <div class="prose">
+          <p>
+            I work at the intersection of data, operations, and emerging technology.
+            My background spans analytics, process improvement, and building lightweight
+            tools — with a growing focus on how AI can be applied practically, not just theoretically.
+          </p>
+          <p>
+            Outside of work, I spend time exploring how non-technical users can get
+            more out of AI tools — which led to the Skills Library, a collection of
+            practical prompts and workflows for everyday tasks.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Experience -->
+    <section class="page-section" aria-labelledby="experience-heading">
+      <div class="container">
+        <h2 id="experience-heading">Experience</h2>
+
+        <div class="experience-list">
+
+          <article class="experience-item">
+            <div class="experience-meta">
+              <span class="experience-period">2023 — Present</span>
+            </div>
+            <div class="experience-body">
+              <h3 class="experience-role">Data Analyst</h3>
+              <p class="experience-company">Current Role</p>
+              <p>
+                Working across data pipelines, reporting, and analysis to support
+                business decisions. Building dashboards and surfacing insights from
+                operational data.
+              </p>
+            </div>
+          </article>
+
+          <!-- Add more experience items here as needed.
+               Copy the <article> block above and update the content. -->
+
+        </div>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Values -->
+    <section class="page-section" aria-labelledby="values-heading">
+      <div class="container">
+        <h2 id="values-heading">Values</h2>
+        <div class="prose">
+          <p>
+            Clarity over cleverness. I care about work that is easy to understand,
+            easy to hand off, and useful to the people it's meant for.
+          </p>
+          <p>
+            Practical over perfect. I'd rather ship something working and iterate
+            than wait for ideal conditions.
+          </p>
+          <p>
+            Learning in public. This site is part of that — built step by step,
+            documented as I go.
+          </p>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+
+  <!-- ============================================================
+       Footer — same markup will be repeated across all pages.
+       Later, if you migrate to a framework, this becomes a component.
+       ============================================================ -->
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <p class="footer-copy">© 2025 Nicky Ng</p>
+      <nav aria-label="Social links">
+        <ul class="footer-links" role="list">
+          <li><a href="https://www.linkedin.com/in/nickyngkw/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/ahjimomo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://public.tableau.com/app/profile/nicky.ng/vizzes" target="_blank" rel="noopener noreferrer">Tableau</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/main.js"></script>
+</body>
+</html>

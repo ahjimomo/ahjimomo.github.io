@@ -1,0 +1,260 @@
+/* ============================================================
+   style.css — Global styles, CSS variables, typography
+   All pages share these. Page-specific styles go in their
+   own CSS files (e.g. projects.css).
+   ============================================================ */
+
+/* ------------------------------------------------------------
+   CSS Custom Properties (variables)
+   Change these to update the look across the entire site.
+   ------------------------------------------------------------ */
+:root {
+  /* Colours */
+  --color-bg:          #F9F7F4;   /* warm off-white background */
+  --color-surface:     #F2EFE9;   /* slightly darker, used for subtle dividers */
+  --color-text:        #1A1A1A;   /* near-black for body text */
+  --color-text-muted:  #6B6860;   /* secondary text, metadata, labels */
+  --color-accent:      #2B5CE6;   /* links and interactive elements */
+  --color-accent-hover:#1A3EB8;   /* link hover state */
+  --color-border:      #E0DDD7;   /* subtle borders and dividers */
+
+  /* Typography */
+  --font-sans:   'DM Sans', sans-serif;       /* body and UI text */
+  --font-serif:  'Lora', serif;               /* headings — adds warmth without decoration */
+
+  /* Type scale — mobile first */
+  --text-xs:   0.75rem;    /* 12px — labels, tags */
+  --text-sm:   0.875rem;   /* 14px — metadata, captions */
+  --text-base: 1rem;       /* 16px — body */
+  --text-lg:   1.125rem;   /* 18px — lead text */
+  --text-xl:   1.5rem;     /* 24px — section headings */
+  --text-2xl:  2rem;       /* 32px — page headings */
+  --text-3xl:  2.75rem;    /* 44px — hero name */
+
+  /* Spacing scale */
+  --space-1:  0.25rem;
+  --space-2:  0.5rem;
+  --space-3:  0.75rem;
+  --space-4:  1rem;
+  --space-6:  1.5rem;
+  --space-8:  2rem;
+  --space-12: 3rem;
+  --space-16: 4rem;
+  --space-24: 6rem;
+
+  /* Layout */
+  --max-width:       680px;   /* content column width — keeps lines readable */
+  --nav-height:      60px;
+
+  /* Transitions */
+  --transition-fast: 150ms ease;
+  --transition-base: 250ms ease;
+}
+
+
+/* ------------------------------------------------------------
+   Reset & Base
+   A minimal reset so browsers start from a consistent baseline.
+   ------------------------------------------------------------ */
+*, *::before, *::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  -webkit-text-size-adjust: 100%;
+  scroll-behavior: smooth;
+}
+
+body {
+  background-color: var(--color-bg);
+  color: var(--color-text);
+  font-family: var(--font-sans);
+  font-size: var(--text-base);
+  line-height: 1.7;
+  min-height: 100vh;
+  display: grid;
+  grid-template-rows: auto 1fr auto; /* nav | content | footer */
+}
+
+img, svg {
+  display: block;
+  max-width: 100%;
+}
+
+ul, ol {
+  list-style: none;
+}
+
+
+/* ------------------------------------------------------------
+   Typography
+   ------------------------------------------------------------ */
+h1, h2, h3, h4 {
+  font-family: var(--font-serif);
+  font-weight: 600;
+  line-height: 1.25;
+  color: var(--color-text);
+}
+
+h1 { font-size: var(--text-3xl); }
+h2 { font-size: var(--text-2xl); }
+h3 { font-size: var(--text-xl); }
+h4 { font-size: var(--text-lg); }
+
+p {
+  max-width: 60ch; /* ~60 characters per line — comfortable reading width */
+}
+
+a {
+  color: var(--color-accent);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+a:hover {
+  color: var(--color-accent-hover);
+}
+
+/* Underline on inline body links only — not nav or card links */
+p a, li a {
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+
+strong {
+  font-weight: 600;
+}
+
+
+/* ------------------------------------------------------------
+   Layout helpers
+   ------------------------------------------------------------ */
+
+/* .container centres content and constrains width on wide screens */
+.container {
+  width: 100%;
+  max-width: var(--max-width);
+  margin-inline: auto;        /* shorthand for margin-left + margin-right: auto */
+  padding-inline: var(--space-6);
+}
+
+/* .page-section adds consistent vertical rhythm between sections */
+.page-section {
+  padding-block: var(--space-12);
+}
+
+/* Thin horizontal rule used between sections */
+.divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin-block: var(--space-12);
+}
+
+
+/* ------------------------------------------------------------
+   Navigation
+   ------------------------------------------------------------ */
+.site-nav {
+  height: var(--nav-height);
+  border-bottom: 1px solid var(--color-border);
+  display: flex;
+  align-items: center;
+}
+
+.site-nav .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+/* Site name / logo in the nav */
+.nav-home {
+  font-family: var(--font-serif);
+  font-size: var(--text-base);
+  font-weight: 600;
+  color: var(--color-text);
+  text-decoration: none;
+}
+
+.nav-home:hover {
+  color: var(--color-accent);
+}
+
+/* Nav links list */
+.nav-links {
+  display: flex;
+  gap: var(--space-6);
+  align-items: center;
+}
+
+.nav-links a {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  transition: color var(--transition-fast);
+}
+
+.nav-links a:hover,
+.nav-links a[aria-current="page"] {
+  color: var(--color-text);
+}
+
+
+/* ------------------------------------------------------------
+   Footer
+   ------------------------------------------------------------ */
+.site-footer {
+  border-top: 1px solid var(--color-border);
+  padding-block: var(--space-8);
+  margin-top: var(--space-16);
+}
+
+.site-footer .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: var(--space-4);
+}
+
+.footer-copy {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.footer-links {
+  display: flex;
+  gap: var(--space-6);
+}
+
+.footer-links a {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.footer-links a:hover {
+  color: var(--color-text);
+}
+
+
+/* ------------------------------------------------------------
+   Responsive — tablet and up (600px+)
+   ------------------------------------------------------------ */
+@media (min-width: 600px) {
+  h1 { font-size: calc(var(--text-3xl) * 1.1); }
+}
+
+/* ------------------------------------------------------------
+   Responsive — desktop (900px+)
+   ------------------------------------------------------------ */
+@media (min-width: 900px) {
+  .container {
+    padding-inline: var(--space-8);
+  }
+}
