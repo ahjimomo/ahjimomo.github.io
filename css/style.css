@@ -143,14 +143,14 @@ strong {
 
 /* .page-section adds consistent vertical rhythm between sections */
 .page-section {
-  padding-block: var(--space-12);
+  padding-block: var(--space-8);
 }
 
 /* Thin horizontal rule used between sections */
 .divider {
   border: none;
   border-top: 1px solid var(--color-border);
-  margin-block: var(--space-12);
+  margin-block: var(--space-4);
 }
 
 
