@@ -14,8 +14,8 @@
   --color-surface:     #F2EFE9;   /* slightly darker, used for subtle dividers */
   --color-text:        #1A1A1A;   /* near-black for body text */
   --color-text-muted:  #6B6860;   /* secondary text, metadata, labels */
-  --color-accent:      #2B5CE6;   /* links and interactive elements */
-  --color-accent-hover:#1A3EB8;   /* link hover state */
+  --color-accent:      #3A5A40;   /* forest green for links */
+  --color-accent-hover:#2A4230;   /* link hover state */
   --color-border:      #E0DDD7;   /* subtle borders and dividers */
 
   /* Typography */
