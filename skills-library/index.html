@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>AI Skills Library — Nicky Ng</title>
+  <meta name="description" content="A curated library of AI prompts, skills, and workflows for everyday use." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lora:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Paths go up two levels because this file is inside /skills-library/ -->
+  <link rel="stylesheet" href="../css/style.css" />
+  <link rel="stylesheet" href="css/library.css" />
+</head>
+
+<body>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a href="../index.html" class="nav-home">Nicky Ng</a>
+      <ul class="nav-links" role="list">
+        <li><a href="../index.html">About</a></li>
+        <li><a href="../pages/projects.html">Projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- Page header -->
+    <section class="page-section library-header" aria-label="Skills Library introduction">
+      <div class="container">
+        <h1>AI Skills Library</h1>
+        <p class="library-intro">
+          A growing library of AI skills, prompts, and workflows — built for people
+          who want to get more done with AI, without needing to be technical.
+        </p>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Search and filter -->
+    <section class="page-section" aria-label="Search and filter skills">
+      <div class="container">
+
+        <!-- Search input -->
+        <div class="search-bar">
+          <label for="skill-search" class="sr-only">Search skills</label>
+          <input
+            type="search"
+            id="skill-search"
+            class="search-input"
+            placeholder="Search by keyword, use-case, or type..."
+            aria-label="Search skills"
+          />
+        </div>
+
+        <!-- Use-case tag filters -->
+        <p class="tag-filters-label">Filter by use-case</p>
+        <div class="tag-filters" role="group" aria-label="Filter by use-case">
+          <button class="tag-filter" data-tag="Strategy & Planning">Strategy & Planning</button>
+          <button class="tag-filter" data-tag="Synthesis & Insights">Synthesis & Insights</button>
+          <button class="tag-filter" data-tag="Content & Design">Content & Design</button>
+          <button class="tag-filter" data-tag="Technical Execution">Technical Execution</button>
+          <button class="tag-filter" data-tag="Inquiry & Research">Inquiry & Research</button>
+          <button class="tag-filter" data-tag="Interpersonal & Ops/SOP">Interpersonal & Ops/SOP</button>
+        </div>
+
+        <!-- Implementation tag filters -->
+        <p class="tag-filters-label">Filter by type</p>
+        <div class="tag-filters" role="group" aria-label="Filter by implementation type">
+          <button class="tag-filter" data-tag="Prompt">Prompt</button>
+          <button class="tag-filter" data-tag="Skill">Skill</button>
+          <button class="tag-filter" data-tag="Agent">Agent</button>
+          <button class="tag-filter" data-tag="Workflow">Workflow</button>
+          <button class="tag-filter" data-tag="Template">Template</button>
+          <button class="tag-filter" data-tag="Guardrail">Guardrail</button>
+        </div>
+
+        <!-- Results count — shown only when filters are active -->
+        <p id="results-count" class="results-count" hidden aria-live="polite"></p>
+
+        <!-- Skills grid — populated by search.js -->
+        <div id="skills-grid" class="skills-grid" aria-label="Skills list">
+          <!-- Cards are injected here by JavaScript -->
+          <p class="skills-empty">Loading skills...</p>
+        </div>
+
+        <!-- Show more button -->
+        <div class="show-more-wrap">
+          <button id="show-more" class="show-more-btn" hidden>
+            Show more
+          </button>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <p class="footer-copy">© 2026 Nicky Ng</p>
+      <nav aria-label="Social links">
+        <ul class="footer-links" role="list">
+          <li><a href="https://www.linkedin.com/in/nickyngkw/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/ahjimomo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://public.tableau.com/app/profile/nicky.ng/vizzes" target="_blank" rel="noopener noreferrer">Tableau</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="js/search.js"></script>
+</body>
+</html>
