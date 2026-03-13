@@ -4,47 +4,53 @@
     "title": "Research Briefing Generator",
     "description": "Generate a structured research briefing on any topic — covering key facts, open questions, and recommended sources.",
     "useCase": "Inquiry & Research",
-    "implementation": "Prompt",
-    "slug": "research-briefing-generator"
+    "implementation": "Reusable Instruction",
+    "slug": "research-briefing-generator",
+    "github": "#"
   },
   {
     "id": "skill-002",
-    "title": "Meeting Summary & Actions",
-    "description": "Turn raw meeting notes or transcripts into a clean summary with clearly labelled action items and owners.",
-    "useCase": "Synthesis & Insights",
-    "implementation": "Template",
-    "slug": "meeting-summary-actions"
+    "title": "Context Translator",
+    "description": "Translate any text or document into English, then explain what it actually means — not just the words, but the tone, intent, and cultural nuance behind them.",
+    "useCase": "Writing & Communication",
+    "implementation": "Reusable Instruction",
+    "slug": "context-translator",
+    "github": "https://github.com/ahjimomo/ai-skills-library/tree/main/skills/context-translator"
   },
   {
     "id": "skill-003",
     "title": "Project Kickoff Planner",
     "description": "Define scope, milestones, and responsibilities for a new project — structured to align stakeholders from day one.",
     "useCase": "Strategy & Planning",
-    "implementation": "Workflow",
-    "slug": "project-kickoff-planner"
+    "implementation": "Reusable Instruction",
+    "slug": "project-kickoff-planner",
+    "github": "#"
   },
   {
     "id": "skill-004",
-    "title": "Plain Language Rewriter",
-    "description": "Paste in dense or technical content and get a version anyone can understand — without losing accuracy.",
-    "useCase": "Content & Design",
-    "implementation": "Prompt",
-    "slug": "plain-language-rewriter"
+    "title": "Meeting Notes Summariser",
+    "description": "Turn raw meeting notes or transcripts into a clean summary with clearly labelled action items and owners.",
+    "useCase": "Synthesis & Insights",
+    "implementation": "Reusable Instruction",
+    "slug": "meeting-notes-summariser",
+    "github": "#"
   },
   {
     "id": "skill-005",
     "title": "SOP Builder",
     "description": "Turn a rough process description into a formatted standard operating procedure, ready to hand off to a team.",
     "useCase": "Interpersonal & Ops/SOP",
-    "implementation": "Template",
-    "slug": "sop-builder"
+    "implementation": "Reusable Instruction",
+    "slug": "sop-builder",
+    "github": "#"
   },
   {
     "id": "skill-006",
-    "title": "Data Analysis Assistant",
+    "title": "Data Interpretation Assistant",
     "description": "Describe your dataset and question — get a step-by-step analysis plan, suggested methods, and interpretation guidance.",
     "useCase": "Technical Execution",
-    "implementation": "Skill",
-    "slug": "data-analysis-assistant"
+    "implementation": "Reusable Instruction",
+    "slug": "data-interpretation-assistant",
+    "github": "#"
   }
 ]

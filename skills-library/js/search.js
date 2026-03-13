@@ -142,16 +142,24 @@
 
 
   /* ---- Build a single card's HTML ---- */
+  /* Cards with github === '#' are placeholders — not yet published.
+     They render without a link and show a "Coming soon" label instead. */
   function renderCard(skill) {
+    var isPlaceholder = !skill.github || skill.github === '#';
+
+    var footerHtml = isPlaceholder
+      ? '  <span class="skill-card-coming-soon">Coming soon</span>'
+      : '  <a href="pages/' + escapeHtml(skill.slug) + '.html" class="skill-card-link">View skill →</a>';
+
     return [
-      '<article class="skill-card">',
+      '<article class="skill-card' + (isPlaceholder ? ' skill-card--placeholder' : '') + '">',
       '  <div class="skill-card-tags">',
       '    <span class="skill-tag tag-use-case">' + escapeHtml(skill.useCase) + '</span>',
       '    <span class="skill-tag tag-implementation">' + escapeHtml(skill.implementation) + '</span>',
       '  </div>',
       '  <h3 class="skill-card-title">' + escapeHtml(skill.title) + '</h3>',
       '  <p class="skill-card-description">' + escapeHtml(skill.description) + '</p>',
-      '  <a href="pages/' + escapeHtml(skill.slug) + '.html" class="skill-card-link">View skill →</a>',
+      footerHtml,
       '</article>'
     ].join('\n');
   }

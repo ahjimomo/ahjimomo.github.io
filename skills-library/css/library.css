@@ -243,3 +243,15 @@
   color: var(--color-text);
   border-color: var(--color-text-muted);
 }
+
+/* ---- Placeholder card state ---- */
+.skill-card--placeholder {
+  opacity: 0.6;
+}
+
+.skill-card-coming-soon {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  letter-spacing: 0.02em;
+  font-style: italic;
+}
