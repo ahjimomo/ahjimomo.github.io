@@ -104,13 +104,12 @@
         matchesSearch = haystack.includes(searchQuery);
       }
 
-      /* Tag filter — skill must match every active tag.
-         Each tag is checked against both useCase and implementation,
-         so selecting "Prompt" + "Inquiry & Research" shows only skills
-         that satisfy both conditions. */
+      /* Tag filter — skill must match ANY active tag (OR logic).
+         Selecting "Prompt" + "Workflow" shows skills that are
+         either a Prompt or a Workflow. */
       var matchesTags = true;
       if (activeTags.size > 0) {
-        matchesTags = Array.from(activeTags).every(function (tag) {
+        matchesTags = Array.from(activeTags).some(function (tag) {
           return skill.useCase === tag || skill.implementation === tag;
         });
       }
