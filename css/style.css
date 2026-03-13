@@ -258,3 +258,18 @@ strong {
     padding-inline: var(--space-8);
   }
 }
+
+/* ------------------------------------------------------------
+   Responsive — small mobile (under 400px)
+   ------------------------------------------------------------ */
+@media (max-width: 400px) {
+  h1 { font-size: 2rem; }  /* scale hero name down on very small screens */
+
+  .nav-links {
+    gap: var(--space-4);   /* tighten nav link gap so it doesn't overflow */
+  }
+
+  .nav-links a {
+    font-size: 0.8rem;     /* slightly smaller nav text on small phones */
+  }
+}
