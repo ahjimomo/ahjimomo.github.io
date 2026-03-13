@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Project Kickoff Planner — AI Skills Library</title>
+  <meta name="description" content="Turn a project brief or rough idea into a structured kickoff plan — covering objectives, scope, roles, milestones, risks, and domain-specific context." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lora:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../css/library.css" />
+  <link rel="stylesheet" href="../css/skill-detail.css" />
+</head>
+
+<body>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a href="../../index.html" class="nav-home">Nicky Ng</a>
+      <ul class="nav-links" role="list">
+        <li><a href="../../index.html">About</a></li>
+        <li><a href="../../pages/projects.html">Projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-section skill-breadcrumb-section" aria-label="Breadcrumb">
+      <div class="container">
+        <nav class="skill-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">AI Skills Library</a>
+          <span aria-hidden="true">›</span>
+          <span>Project Kickoff Planner</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="page-section skill-header-section" aria-labelledby="skill-title">
+      <div class="container">
+        <div class="skill-meta-row">
+          <span class="skill-tag tag-use-case">Strategy & Planning</span>
+          <span class="skill-tag tag-implementation">Prompt</span>
+        </div>
+        <h1 id="skill-title">Project Kickoff Planner</h1>
+        <p class="skill-lead">
+          Turn a project brief or rough idea into a structured kickoff plan — covering objectives,
+          scope, roles, milestones, risks, and domain-specific context to align stakeholders from day one.
+        </p>
+        <a
+          href="https://github.com/ahjimomo/ai-skills-library/blob/main/skills/project-kickoff-planner/SKILL.md"
+          class="skill-github-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on GitHub ↗</a>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="page-section skill-body" aria-label="Skill details">
+      <div class="container">
+
+        <div class="skill-section">
+          <h2>When to Use It</h2>
+          <ul class="skill-list">
+            <li>You are starting a new project and need to align the team on objectives, scope, and responsibilities before work begins</li>
+            <li>You have a rough brief or idea and want to turn it into something structured before the first meeting</li>
+            <li>You want to identify risks and open questions before they become blockers mid-project</li>
+            <li>You are preparing a kickoff document to share with stakeholders or leadership</li>
+            <li>You are onboarding a new team member and need a clear project overview to share</li>
+          </ul>
+        </div>
+
+        <div class="skill-section">
+          <h2>What It Does</h2>
+          <p>Takes a project brief, description, or rough notes and structures it into a complete kickoff plan — covering objectives, scope, roles and responsibilities, milestones, risks, open questions, and a domain context section that brings in relevant industry frameworks, best practices, and domain-specific considerations. All assumptions are flagged explicitly so stakeholders can validate them before work begins. You will ask for the industry and project type before proceeding if either is unclear.</p>
+        </div>
+
+        <div class="skill-section">
+          <h2>How to Use It</h2>
+
+          <p class="skill-option-label">Option A — For Claude users (via Skills)</p>
+          <ol class="skill-steps">
+            <li>Open the <a href="https://github.com/ahjimomo/ai-skills-library/blob/main/skills/project-kickoff-planner/SKILL.md" target="_blank" rel="noopener noreferrer">skill file on GitHub ↗</a> and download <em>SKILL.md</em></li>
+            <li>Place the file in your Claude skills folder — <em>~/.claude/skills/project-kickoff-planner/SKILL.md</em> for personal use, or <em>.claude/skills/project-kickoff-planner/SKILL.md</em> inside your project directory for project use</li>
+            <li>The skill will be available automatically in your next Claude conversation</li>
+          </ol>
+          <p class="skill-option-note">Note: This applies to personal and project use. Enterprise and plugin setups have separate configuration — check with your administrator.</p>
+
+          <p class="skill-option-label">Option B — Copy and paste the instruction</p>
+          <ol class="skill-steps">
+            <li>Copy the full instruction from the section below</li>
+            <li>Open a new conversation in your preferred AI tool and paste it in</li>
+            <li>Paste your project brief, description, or rough notes</li>
+            <li>Include the industry and project type upfront if known — e.g. "This is a data engineering project in the healthcare industry"</li>
+          </ol>
+        </div>
+
+        <div class="skill-section">
+          <h2>The Instruction</h2>
+          <p class="skill-section-note">Copy the full text below and paste it into a new conversation.</p>
+
+          <div class="skill-instruction-block">
+            <div class="skill-instruction-header">
+              <span class="skill-instruction-label">Instruction</span>
+              <button class="copy-btn" aria-label="Copy instruction to clipboard">Copy</button>
+            </div>
+            <pre class="skill-instruction-text"><code>You are an experienced project manager and strategic planner with broad knowledge across industries and project types.
+
+Before you begin, identify the following:
+- What industry does this project operate in? (e.g. financial services, healthcare, retail, technology)
+- What type of project is this? (e.g. data engineering, product redesign, marketing campaign, compliance programme)
+
+If either of these is not clearly stated or cannot be reasonably inferred from the brief, stop and ask the user before proceeding. Do not guess — the industry and project type determine which frameworks, risks, and domain-specific considerations are relevant.
+
+Once you have confirmed both, proceed with the following structure.
+
+---
+
+First, extract the following project details if available:
+
+Project Details
+- Project Name:
+- Industry:
+- Project Type:
+- Project Owner:
+- Start Date:
+- Target End Date:
+- Team / Stakeholders:
+
+If any details are not mentioned, write "Not mentioned" in the relevant field.
+
+Then structure the rest of the output into seven sections:
+
+Section 1 — Project Objective
+Write 2–3 sentences describing what this project is trying to achieve and why it matters. Focus on the outcome, not the tasks.
+
+Section 2 — Scope
+Define what is in scope and what is explicitly out of scope. If scope boundaries are unclear, flag them using "Flagged for review:" so the team can confirm. Where relevant, add an inline domain callout noting any scope consideration specific to this industry or project type.
+
+Section 3 — Roles & Responsibilities
+List the key roles in a table: Role | Name / Team | Responsibilities. If roles were not specified, use placeholders and flag with "Flagged for review:". Note any roles typically required for this type of project that are missing from the brief.
+
+Section 4 — Milestones
+List key milestones as a table: Milestone | Description | Target Date. Mark all dates as starting points, not commitments, if not provided. Note any milestones typically expected for this project type that are missing.
+
+Section 5 — Risks & Assumptions
+Risks table: Risk | Likelihood | Impact | Mitigation. Include both stated risks and domain-specific risks common to this type of project. Label domain-specific risks with [Domain risk].
+
+Assumptions as bullets. Include both stated and domain-specific assumptions. Label inferred assumptions with [Domain assumption].
+
+Section 6 — Open Questions
+Bullets listing questions to resolve before or during kickoff. Label domain-inferred questions with [Domain question].
+
+Section 7 — Domain Context
+Based on the confirmed industry and project type:
+
+Relevant Frameworks & Best Practices — list 2–4 frameworks commonly used for this type of project with a brief description and citation where available.
+
+Domain-Specific Considerations — list 3–5 things the team should be aware of given the industry and project type.
+
+Suggested Additional Roles or Expertise — flag any specialist knowledge not reflected in the current team.
+
+---
+
+Important rules:
+- Do not begin the plan until the industry and project type are confirmed.
+- Only use information from the brief for project-specific sections. Do not invent scope, roles, or timelines.
+- All timeline and resource estimates should be marked as starting points, not commitments.
+- Flag ambiguous or missing information using "Flagged for review:".
+- Label all domain-inferred content clearly — [Domain risk], [Domain assumption], [Domain question].
+- All cited frameworks must reference a real, verifiable source.</code></pre>
+          </div>
+        </div>
+
+        <div class="skill-section">
+          <h2>Guardrails & Accuracy Checks</h2>
+
+          <p class="skill-subsection-label">Built into this skill</p>
+          <ul class="skill-list">
+            <li>You will ask for the industry and project type before proceeding if either is missing or unclear</li>
+            <li>Project-specific content is drawn only from the brief — domain-inferred content is labelled separately</li>
+            <li>All cited frameworks and best practices must reference a real, verifiable source</li>
+            <li>Timeline and resource estimates are explicitly marked as starting points, not commitments</li>
+          </ul>
+
+          <p class="skill-subsection-label">Before you share this plan, check</p>
+          <ul class="skill-checklist">
+            <li>Did You confirm the industry and project type before generating the plan?</li>
+            <li>Are the roles and responsibilities assigned to the right people or teams?</li>
+            <li>Are the milestones and target dates realistic given your actual constraints?</li>
+            <li>Have the domain-specific risks and assumptions been reviewed by someone with relevant industry experience?</li>
+            <li>Have all items flagged "Flagged for review:" been resolved before sharing with stakeholders?</li>
+          </ul>
+        </div>
+
+        <div class="skill-section">
+          <h2>Example Output</h2>
+          <p class="skill-section-note">This is an illustration of what Claude will return. Your actual output will reflect the brief you provide.</p>
+
+          <div class="skill-example-block">
+            <p class="skill-example-label">User description</p>
+            <p>"We need to automate the claims processing workflow for our insurance operations team. The project owner is Sarah Chen. Team: Data Engineering (James), Operations (Priya), Compliance (Marcus). We use Jira and Confluence. Target go-live is September 2026."</p>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">Project Objective</p>
+            <p>Automate the manual claims processing workflow to reduce average processing time from 5 days to under 24 hours, while maintaining compliance with MAS regulatory requirements. The project will deliver a data pipeline that ingests, validates, and routes claims automatically, freeing the Operations team to focus on complex or disputed cases.</p>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">Domain Context — Considerations</p>
+            <ul class="skill-list">
+              <li>Insurance data pipelines in Singapore are subject to MAS Notice 126 on technology risk management — audit logging and data residency requirements are frequently underestimated and can affect timeline significantly</li>
+              <li>Claims data often has significant quality issues — a data profiling exercise early in the project typically saves substantial rework downstream</li>
+              <li><strong>[Domain risk]</strong> MAS regulatory changes during the project timeline could expand compliance scope mid-build — build in a compliance review checkpoint</li>
+              <li><strong>[Domain assumption]</strong> Personal data in claims records is subject to PDPA and must not leave Singapore — data residency constraints apply to all pipeline components</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="skill-back">
+          <a href="../index.html" class="skill-back-link">← Back to Skills Library</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <p class="footer-copy">© 2026 Nicky Ng</p>
+      <nav aria-label="Social links">
+        <ul class="footer-links" role="list">
+          <li><a href="https://www.linkedin.com/in/nickyngkw/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/ahjimomo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://public.tableau.com/app/profile/nicky.ng/vizzes" target="_blank" rel="noopener noreferrer">Tableau</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/skill-detail.js"></script>
+</body>
+</html>

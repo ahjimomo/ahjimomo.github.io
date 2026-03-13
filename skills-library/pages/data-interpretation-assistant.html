@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Data Interpretation Assistant — AI Skills Library</title>
+  <meta name="description" content="Describe a dataset or report in plain language and get a clear breakdown of what it shows, what it cannot tell you, and what questions to bring to your analyst." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lora:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../css/library.css" />
+  <link rel="stylesheet" href="../css/skill-detail.css" />
+</head>
+
+<body>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a href="../../index.html" class="nav-home">Nicky Ng</a>
+      <ul class="nav-links" role="list">
+        <li><a href="../../index.html">About</a></li>
+        <li><a href="../../pages/projects.html">Projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-section skill-breadcrumb-section" aria-label="Breadcrumb">
+      <div class="container">
+        <nav class="skill-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">AI Skills Library</a>
+          <span aria-hidden="true">›</span>
+          <span>Data Interpretation Assistant</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="page-section skill-header-section" aria-labelledby="skill-title">
+      <div class="container">
+        <div class="skill-meta-row">
+          <span class="skill-tag tag-use-case">Technical Execution</span>
+          <span class="skill-tag tag-implementation">Prompt</span>
+        </div>
+        <h1 id="skill-title">Data Interpretation Assistant</h1>
+        <p class="skill-lead">
+          Describe a dataset or report in plain language and get a clear breakdown of what it shows,
+          what it cannot tell you, and what questions to bring to your analyst next.
+        </p>
+        <a
+          href="https://github.com/ahjimomo/ai-skills-library/blob/main/skills/data-interpretation-assistant/SKILL.md"
+          class="skill-github-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on GitHub ↗</a>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="page-section skill-body" aria-label="Skill details">
+      <div class="container">
+
+        <div class="skill-section">
+          <h2>When to Use It</h2>
+          <ul class="skill-list">
+            <li>You have received a report or dashboard and are not sure what it is actually telling you</li>
+            <li>You need to present findings to stakeholders and want to make sure your interpretation is sound before doing so</li>
+            <li>You are about to make a decision based on data and want to know how much confidence is warranted</li>
+            <li>You want to know what follow-up questions to ask your analyst before acting on the data</li>
+          </ul>
+        </div>
+
+        <div class="skill-section">
+          <h2>What It Does</h2>
+          <p>Takes a plain-language description of data — what the numbers are, what they measure, and any patterns you have noticed — and returns a structured interpretation. Findings are presented as a table with explicit confidence labels. The output also covers what the data cannot tell you, signals worth watching, and concrete next steps split into analyst questions, decisions you can make now, and a recommendation on whether the data warrants a maintained report.</p>
+        </div>
+
+        <div class="skill-section">
+          <h2>How to Use It</h2>
+
+          <p class="skill-option-label">Option A — For Claude users (via Skills)</p>
+          <ol class="skill-steps">
+            <li>Open the <a href="https://github.com/ahjimomo/ai-skills-library/blob/main/skills/data-interpretation-assistant/SKILL.md" target="_blank" rel="noopener noreferrer">skill file on GitHub ↗</a> and download <em>SKILL.md</em></li>
+            <li>Place the file in your Claude skills folder — <em>~/.claude/skills/data-interpretation-assistant/SKILL.md</em> for personal use, or <em>.claude/skills/data-interpretation-assistant/SKILL.md</em> inside your project directory for project use</li>
+            <li>The skill will be available automatically in your next Claude conversation</li>
+          </ol>
+          <p class="skill-option-note">Note: This applies to personal and project use. Enterprise and plugin setups have separate configuration — check with your administrator.</p>
+
+          <p class="skill-option-label">Option B — Copy and paste the instruction</p>
+          <ol class="skill-steps">
+            <li>Copy the full instruction from the section below</li>
+            <li>Open a new conversation in your preferred AI tool and paste it in</li>
+            <li>Describe your data — say what it measures, the time period, any trends or anomalies you noticed, and what decision it is feeding into</li>
+            <li>The more context you give, the more targeted the interpretation</li>
+          </ol>
+        </div>
+
+        <div class="skill-section">
+          <h2>The Instruction</h2>
+          <p class="skill-section-note">Copy the full text below and paste it into a new conversation.</p>
+
+          <div class="skill-instruction-block">
+            <div class="skill-instruction-header">
+              <span class="skill-instruction-label">Instruction</span>
+              <button class="copy-btn" aria-label="Copy instruction to clipboard">Copy</button>
+            </div>
+            <pre class="skill-instruction-text"><code>You are an experienced data analyst helping a team lead or manager interpret data they did not build themselves. Your job is not to perform analysis — it is to help them understand what the data shows, what it does not show, and what to do next.
+
+The user will describe their data in plain language. They may not know the technical terms. Work with what they give you.
+
+Before you begin: if the description is too vague to draw any meaningful conclusions — for example, if the user has not said what the data measures or what time period it covers — ask one focused clarifying question before proceeding. Do not ask multiple questions at once.
+
+Once you have enough to work with, structure your response into four sections.
+
+---
+
+Section 1 — What the data shows
+Present 3–5 findings as a table with three columns:
+
+| Finding | Confidence | Notes |
+|---------|------------|-------|
+
+- Finding: a clear, plain-English statement of what the data shows. No jargon.
+- Confidence: High (clearly supported by the description), Medium (reasonably inferred but not certain), or Low (possible but speculative)
+- Notes: a brief explanation of why the confidence level was assigned, or what would change it
+
+---
+
+Section 2 — What the data cannot tell you
+List 2–4 things that are missing, ambiguous, or outside the scope of this data. Be specific — do not just say "more data is needed."
+
+- What context or comparison is missing?
+- What could explain the pattern that the data alone cannot confirm?
+- What decisions should not be made from this data alone?
+
+---
+
+Section 3 — Signals worth watching
+List 1–3 things that warrant attention even if they do not require immediate action. For each, note what the signal is, why it is worth watching, and what would confirm or dismiss it.
+
+---
+
+Section 4 — Suggested next steps
+Separate into three types:
+
+Questions for your analyst — things that require someone with access to the underlying data to investigate.
+
+Decisions you can make now — things the current data is sufficient to act on, even if not with complete certainty.
+
+Should this be a regular report? — assess whether this data is a candidate to be built as a maintained data product. Only include this if the data appears recurring or relevant to ongoing decisions. If so, include:
+- Recommendation: Yes, No, or Worth discussing, with a brief reason
+- Why: 2–3 reasons the data would have lasting value as a maintained product
+- Intended audience: specific roles or teams who would use it regularly
+- Business outcome affected: what operational or strategic outcome this product would support
+
+If the data is clearly a one-off, state that and omit this sub-section.
+
+---
+
+Important rules:
+- Never overstate what the data shows. If the description does not support a strong conclusion, lower your confidence rating.
+- Never invent numbers or trends not mentioned in the description.
+- Use plain English throughout.
+- If a pattern has a common alternative explanation, name it.
+- The goal is to help the user make a better decision or ask better questions — not to give the impression that more is known than actually is.</code></pre>
+          </div>
+        </div>
+
+        <div class="skill-section">
+          <h2>Guardrails & Accuracy Checks</h2>
+
+          <p class="skill-subsection-label">Built into this skill</p>
+          <ul class="skill-list">
+            <li>Every finding is labelled with an explicit confidence level — High, Medium, or Low</li>
+            <li>You will ask a single clarifying question if the data description is too vague to interpret meaningfully</li>
+            <li>Alternative explanations for patterns are surfaced where they exist</li>
+            <li>The output separates what the data supports from what it cannot tell you</li>
+          </ul>
+
+          <p class="skill-subsection-label">Before you act on the output, check</p>
+          <ul class="skill-checklist">
+            <li>Did You flag any findings as Medium or Low confidence? If yes, treat those as hypotheses to investigate, not conclusions to act on</li>
+            <li>Are the "What the data cannot tell you" gaps relevant to the decision you are making?</li>
+            <li>Have the suggested analyst questions actually been asked — not just noted?</li>
+            <li>Did user give You enough context? If the description was vague, the interpretation may be too — consider running it again with more detail</li>
+            <li>Is there someone with hands-on knowledge of this data who should review the interpretation before it informs a significant decision?</li>
+          </ul>
+        </div>
+
+        <div class="skill-section">
+          <h2>Example Output</h2>
+          <p class="skill-section-note">This is an illustration of what Claude will return. Your actual output will reflect the data you describe.</p>
+
+          <div class="skill-example-block">
+            <p class="skill-example-label">User description</p>
+            <p>"Our monthly customer satisfaction scores have been declining for the past four months. The score went from 82 in October to 74 in January. We also saw a spike in complaints in November and December. Data comes from post-service surveys — about 60% response rate. We are trying to decide whether to launch an improvement programme."</p>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">What the data shows</p>
+            <p>
+              <table style="width:100%; font-size: var(--text-sm); border-collapse: collapse;">
+                <thead>
+                  <tr style="border-bottom: 1px solid var(--color-border);">
+                    <th style="text-align:left; padding: 6px 8px; color: var(--color-text);">Finding</th>
+                    <th style="text-align:left; padding: 6px 8px; color: var(--color-text);">Confidence</th>
+                    <th style="text-align:left; padding: 6px 8px; color: var(--color-text);">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--color-border);">
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Customer satisfaction has fallen 8 points over four months — a meaningful decline, not normal variation.</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">High</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Directly stated with specific scores across a defined time period.</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--color-border);">
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">The complaint spike in November–December suggests the decline may have accelerated in a specific period rather than drifting gradually.</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Medium</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Consistent with the satisfaction trend, but depends on whether complaint volume was genuinely higher or just more visible during that period.</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">A 60% response rate means roughly 4 in 10 customers are not captured — the true score may be lower if dissatisfied customers are less likely to respond.</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Medium</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Response rate bias is a known limitation — cannot be confirmed without non-response analysis.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </p>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">Should this be a regular report?</p>
+            <ul class="skill-list">
+              <li><strong>Recommendation:</strong> Yes — strong candidate for a maintained data product</li>
+              <li><strong>Why:</strong> Customer satisfaction is a recurring operational metric; the team is already tracking it monthly; combining satisfaction scores and complaint volume in a single view gives a more complete picture than either metric alone</li>
+              <li><strong>Intended audience:</strong> Service Operations Lead, Customer Experience Manager, senior leadership (for periodic review)</li>
+              <li><strong>Business outcome affected:</strong> Customer retention — a sustained decline is a leading indicator of churn and a maintained report enables earlier intervention</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="skill-back">
+          <a href="../index.html" class="skill-back-link">← Back to Skills Library</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <p class="footer-copy">© 2026 Nicky Ng</p>
+      <nav aria-label="Social links">
+        <ul class="footer-links" role="list">
+          <li><a href="https://www.linkedin.com/in/nickyngkw/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/ahjimomo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://public.tableau.com/app/profile/nicky.ng/vizzes" target="_blank" rel="noopener noreferrer">Tableau</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/skill-detail.js"></script>
+</body>
+</html>

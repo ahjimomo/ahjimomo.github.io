@@ -2,55 +2,73 @@
   {
     "id": "skill-001",
     "title": "Research Briefing Generator",
-    "description": "Generate a structured research briefing on any topic — covering key facts, open questions, and recommended sources.",
+    "description": "Generate a structured research briefing on any topic \u2014 covering key facts, open questions, and recommended sources.",
     "useCase": "Inquiry & Research",
-    "implementation": "Reusable Instruction",
+    "implementation": "Prompt",
     "slug": "research-briefing-generator",
-    "github": "#"
+    "github": "https://github.com/ahjimomo/ai-skills-library/blob/main/skills/research-briefing-generator/SKILL.md"
   },
   {
     "id": "skill-002",
     "title": "Context Translator",
-    "description": "Translate any text or document into English, then explain what it actually means — not just the words, but the tone, intent, and cultural nuance behind them.",
+    "description": "Translate any text or document into English, then explain what it actually means \u2014 not just the words, but the tone, intent, and cultural nuance behind them.",
     "useCase": "Writing & Communication",
-    "implementation": "Reusable Instruction",
+    "implementation": "Prompt",
     "slug": "context-translator",
-    "github": "https://github.com/ahjimomo/ai-skills-library/tree/main/skills/context-translator"
+    "github": "https://github.com/ahjimomo/ai-skills-library/blob/main/skills/context-translator/SKILL.md"
   },
   {
     "id": "skill-003",
     "title": "Project Kickoff Planner",
-    "description": "Define scope, milestones, and responsibilities for a new project — structured to align stakeholders from day one.",
+    "description": "Define scope, milestones, and responsibilities for a new project \u2014 structured to align stakeholders from day one.",
     "useCase": "Strategy & Planning",
-    "implementation": "Reusable Instruction",
+    "implementation": "Prompt",
     "slug": "project-kickoff-planner",
-    "github": "#"
+    "github": "https://github.com/ahjimomo/ai-skills-library/blob/main/skills/project-kickoff-planner/SKILL.md"
   },
   {
     "id": "skill-004",
     "title": "Meeting Notes Summariser",
     "description": "Turn raw meeting notes or transcripts into a clean summary with clearly labelled action items and owners.",
     "useCase": "Synthesis & Insights",
-    "implementation": "Reusable Instruction",
+    "implementation": "Prompt",
     "slug": "meeting-notes-summariser",
-    "github": "#"
+    "github": "https://github.com/ahjimomo/ai-skills-library/blob/main/skills/meeting-notes-summariser/SKILL.md"
   },
   {
     "id": "skill-005",
     "title": "SOP Builder",
     "description": "Turn a rough process description into a formatted standard operating procedure, ready to hand off to a team.",
     "useCase": "Interpersonal & Ops/SOP",
-    "implementation": "Reusable Instruction",
+    "implementation": "Workflow",
     "slug": "sop-builder",
-    "github": "#"
+    "github": "https://github.com/ahjimomo/ai-skills-library/blob/main/skills/sop-builder/SKILL.md"
   },
   {
     "id": "skill-006",
     "title": "Data Interpretation Assistant",
-    "description": "Describe your dataset and question — get a step-by-step analysis plan, suggested methods, and interpretation guidance.",
+    "description": "Describe your dataset and question \u2014 get a step-by-step analysis plan, suggested methods, and interpretation guidance.",
     "useCase": "Technical Execution",
-    "implementation": "Reusable Instruction",
+    "implementation": "Prompt",
     "slug": "data-interpretation-assistant",
+    "github": "https://github.com/ahjimomo/ai-skills-library/blob/main/skills/data-interpretation-assistant/SKILL.md"
+  },
+  {
+    "id": "skill-007",
+    "title": "Explain It Simply",
+    "description": "Break down any topic, concept, or document into a plain explanation suitable for a child or complete newcomer \u2014 no jargon, no assumed knowledge.",
+    "useCase": "Writing & Communication",
+    "implementation": "Prompt",
+    "slug": "explain-it-simply",
+    "github": "#"
+  },
+  {
+    "id": "skill-008",
+    "title": "Travel Planner",
+    "description": "Plan a trip end-to-end \u2014 itinerary, logistics, budget, and packing considerations \u2014 through a guided conversation that adapts to your travel style and constraints.",
+    "useCase": "Strategy & Planning",
+    "implementation": "Workflow",
+    "slug": "travel-planner",
     "github": "#"
   }
 ]

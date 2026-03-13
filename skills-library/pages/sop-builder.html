@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SOP Builder — AI Skills Library</title>
+  <meta name="description" content="Build a structured, role-assigned standard operating procedure from a process description or reference materials — with gaps flagged and improvements suggested." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lora:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../css/library.css" />
+  <link rel="stylesheet" href="../css/skill-detail.css" />
+</head>
+
+<body>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a href="../../index.html" class="nav-home">Nicky Ng</a>
+      <ul class="nav-links" role="list">
+        <li><a href="../../index.html">About</a></li>
+        <li><a href="../../pages/projects.html">Projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-section skill-breadcrumb-section" aria-label="Breadcrumb">
+      <div class="container">
+        <nav class="skill-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">AI Skills Library</a>
+          <span aria-hidden="true">›</span>
+          <span>SOP Builder</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="page-section skill-header-section" aria-labelledby="skill-title">
+      <div class="container">
+        <div class="skill-meta-row">
+          <span class="skill-tag tag-use-case">Interpersonal & Ops/SOP</span>
+          <span class="skill-tag tag-implementation">Workflow</span>
+        </div>
+        <h1 id="skill-title">SOP Builder</h1>
+        <p class="skill-lead">
+          Describe a process and share your reference materials — get a structured, role-assigned
+          standard operating procedure with gaps flagged and improvements suggested.
+        </p>
+        <a
+          href="https://github.com/ahjimomo/ai-skills-library/blob/main/skills/sop-builder/SKILL.md"
+          class="skill-github-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on GitHub ↗</a>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="page-section skill-body" aria-label="Skill details">
+      <div class="container">
+
+        <div class="skill-section">
+          <h2>When to Use It</h2>
+          <ul class="skill-list">
+            <li>You need to document a process that currently lives only in someone's head or in scattered notes</li>
+            <li>An existing SOP is outdated, incomplete, or inconsistent and needs to be rebuilt</li>
+            <li>You are onboarding someone new and need a written procedure they can follow independently</li>
+            <li>A process has changed due to a new system, policy, or team structure and the documentation needs to catch up</li>
+            <li>You need a compliance or audit-ready procedure with clear ownership and traceability</li>
+          </ul>
+        </div>
+
+        <div class="skill-section">
+          <h2>What It Does</h2>
+          <p>Works in stages — first gathering the basics, then requesting reference materials, then filling any remaining gaps before drafting. Produces a complete SOP in table format with each step assigned to a role, annotated with notes, and tailored to the SOP type: operational, escalation and decision, onboarding, or compliance. All gaps, suggested improvements, and inferred assumptions are surfaced separately so the team can validate before the SOP is distributed.</p>
+        </div>
+
+        <div class="skill-section">
+          <h2>How to Use It</h2>
+
+          <p class="skill-option-label">Option A — For Claude users (via Skills)</p>
+          <ol class="skill-steps">
+            <li>Open the <a href="https://github.com/ahjimomo/ai-skills-library/blob/main/skills/sop-builder/SKILL.md" target="_blank" rel="noopener noreferrer">skill file on GitHub ↗</a> and download <em>SKILL.md</em></li>
+            <li>Place the file in your Claude skills folder — <em>~/.claude/skills/sop-builder/SKILL.md</em> for personal use, or <em>.claude/skills/sop-builder/SKILL.md</em> inside your project directory for project use</li>
+            <li>The skill will be available automatically in your next Claude conversation</li>
+          </ol>
+          <p class="skill-option-note">Note: This applies to personal and project use. Enterprise and plugin setups have separate configuration — check with your administrator.</p>
+
+          <p class="skill-option-label">Option B — Copy and paste the instruction</p>
+          <ol class="skill-steps">
+            <li>Copy the full instruction from the section below</li>
+            <li>Open a new conversation in your preferred AI tool and paste it in</li>
+            <li>Briefly describe the process you want to document — You will guide you through the rest</li>
+            <li>Have reference materials ready to upload or paste: existing SOPs, checklists, policy docs, org charts, or system guides</li>
+          </ol>
+
+          <p class="skill-subsection-label">What to have ready before you start</p>
+          <ul class="skill-list">
+            <li>Any existing SOP, process doc, or checklist — even if outdated or informal</li>
+            <li>A list of the roles or teams involved in the process</li>
+            <li>The systems, tools, or platforms used at each step</li>
+            <li>Any policy, compliance, or regulatory requirements the process must meet</li>
+          </ul>
+        </div>
+
+        <div class="skill-section">
+          <h2>The Instruction</h2>
+          <p class="skill-section-note">Copy the full text below and paste it into a new conversation.</p>
+
+          <div class="skill-instruction-block">
+            <div class="skill-instruction-header">
+              <span class="skill-instruction-label">Instruction</span>
+              <button class="copy-btn" aria-label="Copy instruction to clipboard">Copy</button>
+            </div>
+            <pre class="skill-instruction-text"><code>You are an experienced operations specialist and technical writer helping a team lead or manager build a structured, role-assigned standard operating procedure (SOP). Your job is to gather enough context to write an accurate, usable SOP — and to flag gaps and suggest improvements based on what you know about good process design.
+
+You do not write the SOP until you have gathered sufficient context. Work through the following stages in order.
+
+---
+
+Stage 1 — Understand the basics
+
+Ask the user the following questions in a single message, numbered clearly. Do not proceed to Stage 2 until you have answers to at least questions 1, 2, 3, and 4.
+
+1. What is the name of this SOP, and what process does it cover?
+2. What type of SOP is this? (Choose one or more)
+   - Operational / process — step-by-step how-to
+   - Escalation & decision — if X then Y logic
+   - Onboarding & training — for new team members or role transitions
+   - Policy & compliance — must meet regulatory or audit requirements
+3. What triggers this process?
+4. What does a successful completion of this process look like?
+5. Who are the roles or teams involved?
+6. What industry or domain does this process operate in?
+7. Are there any systems, tools, platforms, or forms used?
+8. Are there any compliance, regulatory, or policy requirements?
+
+---
+
+Stage 2 — Request reference materials
+
+After receiving answers to Stage 1, send the following message:
+
+"Thank you — that gives me a good starting point. Before I draft the SOP, please share any reference materials you have. These help me write something accurate rather than inferred.
+
+You can upload or paste any of the following:
+- Existing SOP or process document — even if outdated, partial, or informal. This is the most useful thing you can share.
+- Checklist or runbook — any step-by-step notes used in practice.
+- Policy or compliance document — if this process must meet regulatory or audit requirements.
+- Org chart or RACI matrix — to confirm role names and ownership boundaries.
+- System guides or screenshots — if specific tools are used at key steps.
+- Examples of completed outputs — e.g. a filled form or completed ticket.
+- Anything else you think is relevant — rough notes, email threads, or a transcript.
+
+If you do not have any of these, just let me know and I will work from the description you have provided."
+
+Wait for the user's response before continuing.
+
+---
+
+Stage 3 — Fill remaining gaps
+
+Review everything gathered. Ask only the questions you cannot reasonably answer from what has already been provided. Group in a single message, numbered clearly. Do not ask more than five questions. If you have enough to proceed, skip Stage 3 entirely.
+
+---
+
+Stage 4 — Draft the SOP
+
+SOP Header — include this metadata table:
+
+| Field | Detail |
+|-------|--------|
+| SOP Name | |
+| Process Type | |
+| Scope | |
+| Trigger | |
+| End State | |
+| Owner | |
+| Roles Involved | |
+| Systems / Tools | |
+| Compliance Requirements | |
+| Version | 1.0 |
+| Last Updated | [Today's date] |
+| Review Date | [12 months from today] |
+
+SOP Steps — use table format based on SOP type:
+
+Operational and Onboarding:
+| Step | Action | Owner | Notes |
+
+Escalation & Decision:
+| Step | Condition | Action | Owner | Notes |
+
+Policy & Compliance:
+| Step | Action | Owner | Evidence / Record | Notes |
+
+Flags & Suggested Improvements — three categories after the SOP table:
+- [Gap] — missing ownership, criteria, or process details, with explanation of why it matters
+- [Suggestion] — improvements or best practice alignment
+- [Assumption] — anything inferred rather than drawn from the materials
+
+---
+
+Important rules:
+- Do not draft until Stage 2 is complete.
+- When reference materials are provided, treat them as the primary source. Flag disagreements, do not override.
+- If materials conflict with each other, flag the conflict explicitly.
+- All role names must match what the user provided.
+- Never invent process steps, decision criteria, or compliance requirements.
+- If the process is too complex for a single SOP, flag this and suggest sub-SOPs.
+- If the SOP type is onboarding or compliance, note that a relevant HR, legal, or compliance stakeholder should review before distribution.</code></pre>
+          </div>
+        </div>
+
+        <div class="skill-section">
+          <h2>Guardrails & Accuracy Checks</h2>
+
+          <p class="skill-subsection-label">Built into this skill</p>
+          <ul class="skill-list">
+            <li>You works in stages — it does not draft until it has asked for the basics and given the user the opportunity to share reference materials</li>
+            <li>Reference materials are treated as the primary source — deviations are flagged, not silently applied</li>
+            <li>Conflicts between reference materials are surfaced explicitly</li>
+            <li>All inferred content is labelled [Assumption] so it can be validated before the SOP is distributed</li>
+          </ul>
+
+          <p class="skill-subsection-label">Before you distribute this SOP, check</p>
+          <ul class="skill-checklist">
+            <li>Have all [Gap] flags been resolved? An SOP with unresolved ownership gaps will break in practice</li>
+            <li>Have all [Assumption] items been confirmed with someone who knows this process hands-on?</li>
+            <li>If this is a compliance or onboarding SOP, has it been reviewed by the relevant HR, legal, or compliance stakeholder?</li>
+            <li>Has the SOP been walkthrough-tested with someone who will actually follow it — not just reviewed by the person who documented it?</li>
+            <li>Is the Review Date in the header calendared with a reminder?</li>
+          </ul>
+        </div>
+
+        <div class="skill-section">
+          <h2>Example Output</h2>
+          <p class="skill-section-note">This is an illustration of what Claude will return. Your actual output will reflect the process and materials you provide.</p>
+
+          <div class="skill-example-block">
+            <p class="skill-example-label">User description</p>
+            <p>"We need an SOP for how our data team handles ad-hoc data requests from business stakeholders. Requests currently arrive via email and Slack with no consistent triage. Roles: Data Analyst (x2), Data Engineering Lead, Analytics Manager. Tools: Jira and Confluence."</p>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">SOP Steps (excerpt)</p>
+            <p>
+              <table style="width:100%; font-size: var(--text-sm); border-collapse: collapse;">
+                <thead>
+                  <tr style="border-bottom: 1px solid var(--color-border);">
+                    <th style="text-align:left; padding: 6px 8px; color: var(--color-text);">Step</th>
+                    <th style="text-align:left; padding: 6px 8px; color: var(--color-text);">Action</th>
+                    <th style="text-align:left; padding: 6px 8px; color: var(--color-text);">Owner</th>
+                    <th style="text-align:left; padding: 6px 8px; color: var(--color-text);">Notes</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--color-border);">
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">1</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Stakeholder submits request using the standard intake form</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Requester</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Form should capture: request description, business purpose, output format, and deadline. Intake channel TBC — see Flags.</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--color-border);">
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">2</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Acknowledge receipt and create Jira ticket within 1 business day</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Analytics Manager</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Set initial priority to Medium unless urgency has been flagged.</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">3</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Triage request: assess complexity, data availability, and estimated effort</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Analytics Manager</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Categorise as Simple (&lt;2hrs), Standard (2–8hrs), or Complex (&gt;8hrs). Update Jira with category and assigned analyst.</td>
+                  </tr>
+                </tbody>
+              </table>
+            </p>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">Flags (excerpt)</p>
+            <ul class="skill-list">
+              <li><strong>[Gap] Intake channel not defined —</strong> requests currently arrive via email and Slack with no single point of entry. Step 1 cannot be enforced until a single channel is confirmed and communicated to stakeholders.</li>
+              <li><strong>[Suggestion] Replace free-text intake with a structured form —</strong> unstructured requests are a common cause of triage delays. A short Jira intake form would reduce back-and-forth at Step 3.</li>
+              <li><strong>[Assumption] Analytics Manager owns triage and assignment —</strong> if triage is shared or delegated, Steps 2–5 should be updated accordingly.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="skill-back">
+          <a href="../index.html" class="skill-back-link">← Back to Skills Library</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <p class="footer-copy">© 2026 Nicky Ng</p>
+      <nav aria-label="Social links">
+        <ul class="footer-links" role="list">
+          <li><a href="https://www.linkedin.com/in/nickyngkw/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/ahjimomo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://public.tableau.com/app/profile/nicky.ng/vizzes" target="_blank" rel="noopener noreferrer">Tableau</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/skill-detail.js"></script>
+</body>
+</html>

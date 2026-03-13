@@ -1,0 +1,254 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Research Briefing Generator — AI Skills Library</title>
+  <meta name="description" content="Get a structured research briefing on any topic before starting a project — covering what is established, what is contested, open questions, risks, and a short reading list." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lora:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../css/library.css" />
+  <link rel="stylesheet" href="../css/skill-detail.css" />
+</head>
+
+<body>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a href="../../index.html" class="nav-home">Nicky Ng</a>
+      <ul class="nav-links" role="list">
+        <li><a href="../../index.html">About</a></li>
+        <li><a href="../../pages/projects.html">Projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-section skill-breadcrumb-section" aria-label="Breadcrumb">
+      <div class="container">
+        <nav class="skill-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">AI Skills Library</a>
+          <span aria-hidden="true">›</span>
+          <span>Research Briefing Generator</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="page-section skill-header-section" aria-labelledby="skill-title">
+      <div class="container">
+        <div class="skill-meta-row">
+          <span class="skill-tag tag-use-case">Inquiry & Research</span>
+          <span class="skill-tag tag-implementation">Prompt</span>
+        </div>
+        <h1 id="skill-title">Research Briefing Generator</h1>
+        <p class="skill-lead">
+          Get a structured briefing on any topic before starting a project — covering what is
+          established, what is contested, open questions, risks to be aware of, and a short reading list.
+        </p>
+        <a
+          href="https://github.com/ahjimomo/ai-skills-library/blob/main/skills/research-briefing-generator/SKILL.md"
+          class="skill-github-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on GitHub ↗</a>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="page-section skill-body" aria-label="Skill details">
+      <div class="container">
+
+        <div class="skill-section">
+          <h2>When to Use It</h2>
+          <ul class="skill-list">
+            <li>You are starting a project in an unfamiliar domain and need a solid foundation before making decisions</li>
+            <li>You have been asked to work on something outside your usual area and want to get up to speed quickly</li>
+            <li>You want to understand the key debates, risks, or counterarguments in a space before forming a view</li>
+            <li>You need a short reading list to go deeper after the briefing</li>
+            <li>You want to identify what you do not know before committing to an approach</li>
+          </ul>
+        </div>
+
+        <div class="skill-section">
+          <h2>What It Does</h2>
+          <p>Takes a topic description and the context of why you need to understand it, then produces a structured briefing covering: what is established and well-understood, what is actively debated or uncertain, open questions relevant to your specific work, risks and counterarguments worth knowing before you start, and a short recommended reading list. Contested or uncertain areas are flagged with multiple perspectives so you can form your own view.</p>
+        </div>
+
+        <div class="skill-section">
+          <h2>How to Use It</h2>
+
+          <p class="skill-option-label">Option A — For Claude users (via Skills)</p>
+          <ol class="skill-steps">
+            <li>Open the <a href="https://github.com/ahjimomo/ai-skills-library/blob/main/skills/research-briefing-generator/SKILL.md" target="_blank" rel="noopener noreferrer">skill file on GitHub ↗</a> and download <em>SKILL.md</em></li>
+            <li>Place the file in your Claude skills folder — <em>~/.claude/skills/research-briefing-generator/SKILL.md</em> for personal use, or <em>.claude/skills/research-briefing-generator/SKILL.md</em> inside your project directory for project use</li>
+            <li>The skill will be available automatically in your next Claude conversation</li>
+          </ol>
+          <p class="skill-option-note">Note: This applies to personal and project use. Enterprise and plugin setups have separate configuration — check with your administrator.</p>
+
+          <p class="skill-option-label">Option B — Copy and paste the instruction</p>
+          <ol class="skill-steps">
+            <li>Copy the full instruction from the section below</li>
+            <li>Open a new conversation in your preferred AI tool and paste it in</li>
+            <li>Describe the topic you need to understand and why — include what you are about to do, not just what you want to know</li>
+            <li>Mention any constraints or angles that matter — geography, regulatory environment, technology stack, or team size</li>
+          </ol>
+        </div>
+
+        <div class="skill-section">
+          <h2>The Instruction</h2>
+          <p class="skill-section-note">Copy the full text below and paste it into a new conversation.</p>
+
+          <div class="skill-instruction-block">
+            <div class="skill-instruction-header">
+              <span class="skill-instruction-label">Instruction</span>
+              <button class="copy-btn" aria-label="Copy instruction to clipboard">Copy</button>
+            </div>
+            <pre class="skill-instruction-text"><code>You are a research specialist helping an individual contributor get up to speed on a topic before starting a project or piece of work. Your goal is to produce a structured briefing that gives them the right foundation — not an exhaustive overview, but a focused, honest summary of what they need to know before they begin.
+
+Before you begin, check: if the topic or project context is too vague to produce a useful briefing — for example, if the user has not said what they are working on or why they need to understand this topic — ask one focused clarifying question before proceeding. Identify the single most important gap and ask only that. Do not ask multiple questions.
+
+Once you have enough context, produce a briefing using the following five sections.
+
+---
+
+Section 1 — What is established
+Summarise what is well-understood, widely agreed upon, or reliably documented about this topic. Write 4–6 bullet points covering the core facts, concepts, or principles a newcomer needs to know. Keep each point concise and plain. Avoid technical jargon unless the user's description suggests they are familiar with it.
+
+For each bullet, note the basis for confidence in plain language:
+- Widely documented — well-established in multiple reliable sources
+- Generally accepted — common professional or industry consensus, though not universally formalised
+- Based on your training data — treat as a starting point, verify before relying on it
+
+---
+
+Section 2 — What is contested or uncertain
+Identify 2–4 areas where the evidence is mixed, experts disagree, or the situation is actively evolving. For each:
+- Name the contested area clearly
+- Present the main perspectives or positions without taking sides
+- Note what drives the disagreement
+- Indicate whether this disagreement is likely to matter for the user's specific project or context
+
+Do not present a single view as settled if it is not. Do not manufacture false balance on topics where there is genuine consensus.
+
+---
+
+Section 3 — Open questions relevant to your work
+List 3–5 questions the user should be able to answer — or at least have a view on — before their project is too far along. These are not research questions for You to answer; they are decision points or knowledge gaps the user will need to resolve themselves.
+
+Frame each question practically — what does the user need to know, decide, or confirm before proceeding?
+
+---
+
+Section 4 — Risks and counterarguments to be aware of
+List 2–4 risks, failure modes, or counterarguments that are commonly overlooked by people approaching this topic for the first time. Be direct. The goal is to give the user something to pressure-test their thinking, not to validate their current approach.
+
+---
+
+Section 5 — Recommended sources and further reading
+Suggest 4–6 sources the user could consult to go deeper. For each:
+- Give the title, author or organisation, and a URL or reference if available
+- Write one sentence on what it covers and why it is worth reading for this specific context
+- Note the type: foundational text, recent research, practitioner guide, official documentation, or critical perspective
+
+Only recommend sources you are confident exist and are relevant. Do not invent citations. If you are not certain a source exists, describe the type of source to look for rather than naming a specific one.
+
+---
+
+Important rules:
+- Tailor the briefing to the user's stated project or goal — do not produce a generic overview of the topic.
+- Write for someone who is intelligent but not yet familiar with this domain. Assume competence, not prior knowledge.
+- Where information may have changed since your training data, say so explicitly and direct the user to verify before relying on it.
+- If the topic falls outside your reliable knowledge, say so clearly rather than producing a confident-sounding briefing on shaky ground.</code></pre>
+          </div>
+        </div>
+
+        <div class="skill-section">
+          <h2>Guardrails & Accuracy Checks</h2>
+
+          <p class="skill-subsection-label">Built into this skill</p>
+          <ul class="skill-list">
+            <li>Contested and uncertain areas are presented with multiple perspectives, not a single view</li>
+            <li>Each fact in Section 1 is labelled with its basis — Widely documented, Generally accepted, or Based on your training data</li>
+            <li>Sources are only recommended if you are confident they exist — otherwise a source type is suggested instead</li>
+            <li>Time-sensitive or rapidly evolving information is flagged for independent verification</li>
+          </ul>
+
+          <p class="skill-subsection-label">Before you act on this briefing, check</p>
+          <ul class="skill-checklist">
+            <li>Are there any bullets labelled "Based on your training data"? Verify those independently before relying on them</li>
+            <li>Have you read through Section 2 carefully? Contested areas are where newcomers most often form overconfident views early</li>
+            <li>Have the open questions in Section 3 been added to your project prep list?</li>
+            <li>Have you checked the publication dates of sources in Section 5? A foundational text may still be relevant — or may have been superseded</li>
+            <li>If this topic is fast-moving, supplement this briefing with a current news or industry search before acting on it</li>
+          </ul>
+        </div>
+
+        <div class="skill-section">
+          <h2>Example Output</h2>
+          <p class="skill-section-note">This is an illustration of what Claude will return. Your actual output will reflect the topic and project context you provide.</p>
+
+          <div class="skill-example-block">
+            <p class="skill-example-label">User description</p>
+            <p>"I am about to start a project to build a centralised data catalogue for a mid-sized financial services firm. I have a data engineering background but have not worked on data governance tooling before."</p>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">What is established</p>
+            <ul class="skill-list">
+              <li>A data catalogue is a centralised inventory of an organisation's data assets — tables, pipelines, dashboards, APIs — enriched with metadata such as ownership, lineage, and classification. Its primary purpose is to make data discoverable and trusted across the organisation. <strong>Widely documented</strong></li>
+              <li>Adoption failure in data catalogues is most commonly caused by poor metadata quality and low contributor engagement — not technology selection. A catalogue nobody keeps up to date becomes a liability rather than an asset. <strong>Widely documented</strong></li>
+              <li>In financial services, data catalogues frequently intersect with regulatory requirements around data lineage and provenance — particularly under BCBS 239 and MAS TRM guidelines in Singapore. <strong>Widely documented</strong></li>
+            </ul>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">What is contested or uncertain</p>
+            <ul class="skill-list">
+              <li><strong>Build vs buy:</strong> Some organisations build on open-source tooling (DataHub, Apache Atlas) to retain flexibility; others prefer commercial products for faster time-to-value. The right answer depends on team capacity, existing tooling, and budget. This will likely be a real decision point for your project.</li>
+              <li><strong>How much metadata to capture upfront vs incrementally:</strong> Starting with everything risks a delayed launch and stale entries. Starting narrow risks gaps that undermine trust. The incremental approach is increasingly favoured in practitioner communities, but neither is definitively correct.</li>
+            </ul>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">Risks to be aware of</p>
+            <ul class="skill-list">
+              <li><strong>The technology is the easy part:</strong> Most catalogue projects fail due to organisational challenges — unclear ownership, low steward engagement, lack of sponsorship — not technical problems. Starting with tooling selection before resolving governance is a common and costly mistake.</li>
+              <li><strong>Cataloguing everything at launch is a trap:</strong> Attempting full coverage before go-live frequently delays launches and produces poor metadata quality. A narrower scope with high-quality entries is more valuable and more likely to drive adoption.</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="skill-back">
+          <a href="../index.html" class="skill-back-link">← Back to Skills Library</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <p class="footer-copy">© 2026 Nicky Ng</p>
+      <nav aria-label="Social links">
+        <ul class="footer-links" role="list">
+          <li><a href="https://www.linkedin.com/in/nickyngkw/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/ahjimomo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://public.tableau.com/app/profile/nicky.ng/vizzes" target="_blank" rel="noopener noreferrer">Tableau</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/skill-detail.js"></script>
+</body>
+</html>

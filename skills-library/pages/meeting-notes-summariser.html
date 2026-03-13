@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Meeting Notes Summariser — AI Skills Library</title>
+  <meta name="description" content="Turn raw meeting notes or transcripts into a clean summary with clearly labelled action items and owners." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lora:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../css/library.css" />
+  <link rel="stylesheet" href="../css/skill-detail.css" />
+</head>
+
+<body>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a href="../../index.html" class="nav-home">Nicky Ng</a>
+      <ul class="nav-links" role="list">
+        <li><a href="../../index.html">About</a></li>
+        <li><a href="../../pages/projects.html">Projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <section class="page-section skill-breadcrumb-section" aria-label="Breadcrumb">
+      <div class="container">
+        <nav class="skill-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">AI Skills Library</a>
+          <span aria-hidden="true">›</span>
+          <span>Meeting Notes Summariser</span>
+        </nav>
+      </div>
+    </section>
+
+    <section class="page-section skill-header-section" aria-labelledby="skill-title">
+      <div class="container">
+        <div class="skill-meta-row">
+          <span class="skill-tag tag-use-case">Synthesis & Insights</span>
+          <span class="skill-tag tag-implementation">Prompt</span>
+        </div>
+        <h1 id="skill-title">Meeting Notes Summariser</h1>
+        <p class="skill-lead">
+          Turn raw meeting notes or transcripts into a clean summary — with decisions made,
+          action items, owners, and a proposed agenda for the next meeting.
+        </p>
+        <a
+          href="https://github.com/ahjimomo/ai-skills-library/blob/main/skills/meeting-notes-summariser/SKILL.md"
+          class="skill-github-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on GitHub ↗</a>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <section class="page-section skill-body" aria-label="Skill details">
+      <div class="container">
+
+        <div class="skill-section">
+          <h2>When to Use It</h2>
+          <ul class="skill-list">
+            <li>You have just come out of a meeting and need to turn rough notes or a transcript into something you can share with the team</li>
+            <li>You were in back-to-back meetings and need to process notes quickly before the details fade</li>
+            <li>You want a consistent format for meeting summaries across your team so everyone knows where to find decisions and actions</li>
+            <li>You need to send a follow-up to attendees that clearly captures what was decided and who is doing what</li>
+            <li>You are preparing for the next meeting and want a clean record of what was agreed last time</li>
+          </ul>
+        </div>
+
+        <div class="skill-section">
+          <h2>What It Does</h2>
+          <p>Takes raw meeting notes, a transcript, or bullet points — however rough — and structures them into a clean summary with four sections: a short meeting summary paragraph, decisions made organised by topic, an action items table with owner and deadline columns, and a proposed agenda for the next meeting based on open items.</p>
+        </div>
+
+        <div class="skill-section">
+          <h2>How to Use It</h2>
+
+          <p class="skill-option-label">Option A — For Claude users (via Skills)</p>
+          <ol class="skill-steps">
+            <li>Open the <a href="https://github.com/ahjimomo/ai-skills-library/blob/main/skills/meeting-notes-summariser/SKILL.md" target="_blank" rel="noopener noreferrer">skill file on GitHub ↗</a> and download <em>SKILL.md</em></li>
+            <li>Place the file in your Claude skills folder — <em>~/.claude/skills/meeting-notes-summariser/SKILL.md</em> for personal use, or <em>.claude/skills/meeting-notes-summariser/SKILL.md</em> inside your project directory for project use</li>
+            <li>The skill will be available automatically in your next Claude conversation</li>
+          </ol>
+          <p class="skill-option-note">Note: This applies to personal and project use. Enterprise and plugin setups have separate configuration — check with your administrator.</p>
+
+          <p class="skill-option-label">Option B — Copy and paste the instruction</p>
+          <ol class="skill-steps">
+            <li>Copy the full instruction from the section below</li>
+            <li>Open a new conversation in your preferred AI tool and paste it in</li>
+            <li>Paste your meeting notes or transcript — include the meeting subject, date, and attendees if you have them</li>
+            <li>Review the output before sending — check that action items and owners are correct</li>
+          </ol>
+        </div>
+
+        <div class="skill-section">
+          <h2>The Instruction</h2>
+          <p class="skill-section-note">Copy the full text below and paste it into a new conversation.</p>
+
+          <div class="skill-instruction-block">
+            <div class="skill-instruction-header">
+              <span class="skill-instruction-label">Instruction</span>
+              <button class="copy-btn" aria-label="Copy instruction to clipboard">Copy</button>
+            </div>
+            <pre class="skill-instruction-text"><code>You are an expert note-taker and meeting facilitator. I will give you raw meeting notes, a transcript, or bullet points from a meeting. Structure them into a clean, shareable summary using the format below.
+
+First, extract the following details if present in the notes:
+
+Meeting Details
+- Subject:
+- Date:
+- Time:
+- Attendees:
+
+If any of these are not mentioned, write "Not mentioned" in the relevant field.
+
+Then produce four sections:
+
+Section 1 — Meeting Summary
+Write 2–3 sentences summarising what the meeting was about and what was accomplished. Focus on outcomes, not a blow-by-blow account of the discussion.
+
+Section 2 — Decisions Made
+List the key decisions made in the meeting. Group them by topic if there are multiple distinct themes. Use a subtitle for each topic group and bullet points for the decisions under it.
+
+Section 3 — Action Items
+Present all action items as a table with four columns:
+
+| Action | Owner | Deadline | Status |
+|--------|-------|----------|--------|
+
+- Action: what needs to be done, written as a clear task
+- Owner: the person or team responsible (use the name from the notes, or "TBC" if not assigned)
+- Deadline: the agreed date, or "TBC" if not mentioned
+- Status: set all items to "Open" unless the notes indicate otherwise
+
+Section 4 — Next Meeting
+If a next meeting date or time was mentioned, include it here. Then list 2–4 proposed agenda items based on open action items or unresolved topics from the notes.
+
+Important rules:
+- Only include information that is present in the notes. Do not invent decisions, actions, or owners.
+- If the notes are ambiguous about who owns an action, write "TBC" and flag it with a note: "Flagged for review: owner unclear."
+- If the notes are too sparse to produce a meaningful summary, say so and ask for more detail rather than padding the output.
+- Keep the language plain and direct. Write for someone who was not in the meeting.</code></pre>
+          </div>
+        </div>
+
+        <div class="skill-section">
+          <h2>Guardrails & Accuracy Checks</h2>
+
+          <p class="skill-subsection-label">Built into this skill</p>
+          <ul class="skill-list">
+            <li>You only uses information present in the notes — it will not invent decisions, actions, or owners</li>
+            <li>Ambiguous ownership is flagged explicitly with "Flagged for review:" rather than assigned arbitrarily</li>
+            <li>If the notes are too sparse to work with, You will ask for more detail rather than producing a thin output</li>
+          </ul>
+
+          <p class="skill-subsection-label">Before you send the summary, check</p>
+          <ul class="skill-checklist">
+            <li>Are all action items assigned to the right person? Misattributed actions are the most common error</li>
+            <li>Are the deadlines accurate — or were they inferred? Verify any marked "TBC" before distributing</li>
+            <li>Does the meeting summary reflect what actually mattered in the meeting, not just what was said?</li>
+            <li>Did You flag anything for review? Resolve those before sending</li>
+            <li>Are there decisions in the notes that did not make it into Section 2?</li>
+          </ul>
+        </div>
+
+        <div class="skill-section">
+          <h2>Example Output</h2>
+          <p class="skill-section-note">This is an illustration of what Claude will return. Your actual output will reflect the notes you provide.</p>
+
+          <div class="skill-example-block">
+            <p class="skill-example-label">Meeting Details</p>
+            <p>Subject: Q2 Data Pipeline Review<br>Date: 11 March 2026<br>Time: 10:00–11:00 SGT<br>Attendees: James (Data Engineering), Priya (Operations), Marcus (Compliance), Sarah (Analytics Manager)</p>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">Meeting Summary</p>
+            <p>The team reviewed the current state of the Q2 data pipeline build and agreed on scope and timeline adjustments following a dependency identified with the legacy policy system. Compliance sign-off was confirmed as a required milestone before UAT can begin.</p>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">Decisions Made</p>
+            <ul class="skill-list">
+              <li><strong>Timeline:</strong> UAT start date pushed from 1 August to 15 August to allow time for compliance review. Go-live date remains 30 September — buffer to be absorbed in the UAT phase.</li>
+              <li><strong>Compliance:</strong> Marcus to provide written sign-off on audit log requirements before development begins. This is a hard dependency for James's team.</li>
+              <li><strong>Scope:</strong> Customer-facing portal changes confirmed out of scope for this release.</li>
+            </ul>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">Action Items</p>
+            <p>
+              <table style="width:100%; font-size: var(--text-sm); border-collapse: collapse;">
+                <thead>
+                  <tr style="border-bottom: 1px solid var(--color-border);">
+                    <th style="text-align:left; padding: 6px 8px; color: var(--color-text);">Action</th>
+                    <th style="text-align:left; padding: 6px 8px; color: var(--color-text);">Owner</th>
+                    <th style="text-align:left; padding: 6px 8px; color: var(--color-text);">Deadline</th>
+                    <th style="text-align:left; padding: 6px 8px; color: var(--color-text);">Status</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr style="border-bottom: 1px solid var(--color-border);">
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Confirm audit log format requirements in writing</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Marcus</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">18 March 2026</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Open</td>
+                  </tr>
+                  <tr style="border-bottom: 1px solid var(--color-border);">
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Update project plan with revised UAT dates</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Sarah</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">13 March 2026</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Open</td>
+                  </tr>
+                  <tr>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Run technical spike on legacy system API readiness</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">James</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">20 March 2026</td>
+                    <td style="padding: 6px 8px; color: var(--color-text-muted);">Open</td>
+                  </tr>
+                </tbody>
+              </table>
+            </p>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">Next Meeting</p>
+            <p>Date: 25 March 2026, 10:00 SGT</p>
+            <ul class="skill-list">
+              <li>Review Marcus's audit log requirements and confirm development scope</li>
+              <li>James to present findings from legacy API technical spike</li>
+              <li>Confirm updated project plan and revised milestone dates</li>
+            </ul>
+          </div>
+        </div>
+
+        <div class="skill-back">
+          <a href="../index.html" class="skill-back-link">← Back to Skills Library</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <p class="footer-copy">© 2026 Nicky Ng</p>
+      <nav aria-label="Social links">
+        <ul class="footer-links" role="list">
+          <li><a href="https://www.linkedin.com/in/nickyngkw/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/ahjimomo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://public.tableau.com/app/profile/nicky.ng/vizzes" target="_blank" rel="noopener noreferrer">Tableau</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/skill-detail.js"></script>
+</body>
+</html>
