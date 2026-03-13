@@ -1,0 +1,59 @@
+/* ============================================
+   404.css — Page not found styles
+   ============================================ */
+
+.not-found {
+  min-height: calc(100vh - var(--nav-height) - var(--footer-height, 80px));
+  display: flex;
+  align-items: center;
+}
+
+.not-found-illustration {
+  width: 160px;
+  margin-bottom: var(--space-6);
+}
+
+.not-found-illustration svg {
+  width: 100%;
+  height: auto;
+}
+
+.not-found-code {
+  font-family: var(--font-serif);
+  font-size: clamp(2.5rem, 8vw, 4rem);
+  font-weight: 500;
+  color: var(--color-border);
+  line-height: 1;
+  margin: 0 0 var(--space-3) 0;
+  letter-spacing: -0.02em;
+}
+
+.not-found-heading {
+  font-family: var(--font-serif);
+  font-size: clamp(1.5rem, 4vw, 2.25rem);
+  font-weight: 500;
+  color: var(--color-text);
+  margin: 0 0 var(--space-4) 0;
+}
+
+.not-found-message {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  max-width: 40ch;
+  margin: 0 0 var(--space-8) 0;
+}
+
+.not-found-link {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 2px;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.not-found-link:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
