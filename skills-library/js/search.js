@@ -6,36 +6,39 @@
    1. Fetches skills.json and renders all skill cards on load
    2. Typing in the search box filters cards by title, description,
       useCase, and implementation fields
-   3. Clicking a tag label filters by that tag
-   4. Active filters (text + tag) combine — both must match
+   3. Clicking tag buttons toggles them — multiple tags can be
+      active at once across both filter rows
+   4. Active filters (text + tags) combine — skill must match
+      search query AND all active tags
    5. "Show more" reveals additional cards beyond the default limit
    ============================================================ */
 
 (function () {
 
   /* ---- Config ---- */
-  const MOBILE_LIMIT  = 6;   /* cards shown by default on mobile */
-  const DESKTOP_LIMIT = 9;   /* cards shown by default on desktop */
-  const DESKTOP_BREAKPOINT = 900; /* px */
+  const MOBILE_LIMIT        = 6;    /* cards shown by default on mobile */
+  const DESKTOP_LIMIT       = 9;    /* cards shown by default on desktop */
+  const DESKTOP_BREAKPOINT  = 900;  /* px */
 
   /* ---- State ---- */
-  let allSkills       = [];   /* full dataset from JSON */
-  let filteredSkills  = [];   /* current filtered result */
-  let activeTag       = null; /* currently selected tag (string or null) */
-  let searchQuery     = '';   /* current search string */
-  let showingAll      = false;/* whether "show more" has been clicked */
-
+  let allSkills      = [];          /* full dataset from JSON */
+  let filteredSkills = [];          /* current filtered result */
+  let activeTags     = new Set();   /* set of currently active tag strings */
+  let searchQuery    = '';          /* current search string */
+  let showingAll     = false;       /* whether "show more" has been clicked */
 
   /* ---- DOM refs ---- */
-  const searchInput   = document.getElementById('skill-search');
-  const tagButtons    = document.querySelectorAll('.tag-filter');
-  const grid          = document.getElementById('skills-grid');
-  const showMoreBtn   = document.getElementById('show-more');
-  const resultsCount  = document.getElementById('results-count');
+  const searchInput  = document.getElementById('skill-search');
+  const tagButtons   = document.querySelectorAll('.tag-filter');
+  const grid         = document.getElementById('skills-grid');
+  const showMoreBtn  = document.getElementById('show-more');
+  const resultsCount = document.getElementById('results-count');
 
 
   /* ---- Fetch data and initialise ---- */
-  fetch('../data/skills.json')
+  /* Path is relative to the HTML page, not this JS file.
+     ./data/skills.json resolves to /skills-library/data/skills.json */
+  fetch('./data/skills.json')
     .then(function (response) {
       if (!response.ok) throw new Error('Failed to load skills data');
       return response.json();
@@ -59,18 +62,16 @@
 
 
   /* ---- Tag filter button handlers ---- */
+  /* Multiple tags can be active at once — clicking toggles each independently */
   tagButtons.forEach(function (button) {
     button.addEventListener('click', function () {
-      var clicked = this.dataset.tag;
+      var tag = this.dataset.tag;
 
-      /* Toggle off if same tag clicked again */
-      if (activeTag === clicked) {
-        activeTag = null;
+      if (activeTags.has(tag)) {
+        activeTags.delete(tag);
         this.classList.remove('is-active');
       } else {
-        /* Deactivate all, activate clicked */
-        tagButtons.forEach(function (btn) { btn.classList.remove('is-active'); });
-        activeTag = clicked;
+        activeTags.add(tag);
         this.classList.add('is-active');
       }
 
@@ -91,7 +92,7 @@
   function applyFilters() {
     filteredSkills = allSkills.filter(function (skill) {
 
-      /* Text search — checks title, description, useCase, implementation */
+      /* Text search across title, description, useCase, implementation */
       var matchesSearch = true;
       if (searchQuery) {
         var haystack = [
@@ -100,17 +101,21 @@
           skill.useCase,
           skill.implementation
         ].join(' ').toLowerCase();
-
         matchesSearch = haystack.includes(searchQuery);
       }
 
-      /* Tag filter — checks both useCase and implementation */
-      var matchesTag = true;
-      if (activeTag) {
-        matchesTag = skill.useCase === activeTag || skill.implementation === activeTag;
+      /* Tag filter — skill must match every active tag.
+         Each tag is checked against both useCase and implementation,
+         so selecting "Prompt" + "Inquiry & Research" shows only skills
+         that satisfy both conditions. */
+      var matchesTags = true;
+      if (activeTags.size > 0) {
+        matchesTags = Array.from(activeTags).every(function (tag) {
+          return skill.useCase === tag || skill.implementation === tag;
+        });
       }
 
-      return matchesSearch && matchesTag;
+      return matchesSearch && matchesTags;
     });
 
     renderCards(filteredSkills);
@@ -133,7 +138,6 @@
       return renderCard(skill);
     }).join('');
 
-    /* Show/hide "show more" button */
     showMoreBtn.hidden = showingAll || skills.length <= limit;
   }
 
@@ -156,7 +160,7 @@
 
   /* ---- Update visible results count ---- */
   function updateResultsCount(count) {
-    if (searchQuery || activeTag) {
+    if (searchQuery || activeTags.size > 0) {
       resultsCount.textContent = count === 1
         ? '1 skill found'
         : count + ' skills found';
@@ -174,7 +178,7 @@
 
 
   /* ---- Sanitise strings before inserting into HTML ---- */
-  /* This prevents XSS — never insert raw user/external data into innerHTML */
+  /* Prevents XSS — never insert raw external data into innerHTML directly */
   function escapeHtml(str) {
     return String(str)
       .replace(/&/g, '&amp;')
