@@ -1,0 +1,438 @@
+/* ============================================================
+   skill-detail.css — Styles for individual skill detail pages
+   ============================================================ */
+
+
+/* ---- Breadcrumb ---- */
+.skill-breadcrumb-section {
+  padding-top: var(--space-6);
+  padding-bottom: 0;
+}
+
+.skill-breadcrumb {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+}
+
+.skill-breadcrumb a {
+  color: var(--color-text-muted);
+  text-decoration: none;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 1px;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.skill-breadcrumb a:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+
+/* ---- Skill header ---- */
+.skill-header-section {
+  padding-top: var(--space-8);
+  padding-bottom: var(--space-8);
+}
+
+.skill-meta-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2);
+  margin-bottom: var(--space-4);
+}
+
+.skill-header-section h1 {
+  font-family: var(--font-serif);
+  font-size: clamp(1.75rem, 5vw, 2.5rem);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+  line-height: 1.2;
+}
+
+.skill-lead {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 56ch;
+  line-height: 1.6;
+  margin-bottom: var(--space-6);
+}
+
+.skill-github-link {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 2px;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.skill-github-link:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+
+/* ---- Skill body sections ---- */
+.skill-body {
+  padding-top: var(--space-8);
+  background-color: var(--color-bg);
+}
+
+.skill-section {
+  margin-bottom: var(--space-12);
+}
+
+.skill-section h2 {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 500;
+  color: var(--color-text);
+  margin-bottom: var(--space-4);
+}
+
+.skill-section p {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 64ch;
+}
+
+.skill-section-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-bottom: var(--space-4);
+}
+
+.skill-subsection-label {
+  font-size: var(--text-xs);
+  color: var(--color-text-muted);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+
+/* ---- Lists ---- */
+.skill-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skill-list li {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  padding-left: var(--space-4);
+  position: relative;
+  max-width: 64ch;
+}
+
+.skill-list li::before {
+  content: '—';
+  position: absolute;
+  left: 0;
+  color: var(--color-border);
+}
+
+.skill-list li strong {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+
+/* ---- Numbered steps ---- */
+.skill-steps {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  counter-reset: steps;
+}
+
+.skill-steps li {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  padding-left: var(--space-8);
+  position: relative;
+  max-width: 64ch;
+  counter-increment: steps;
+}
+
+.skill-steps li::before {
+  content: counter(steps);
+  position: absolute;
+  left: 0;
+  width: var(--space-6);
+  height: var(--space-6);
+  background-color: var(--color-surface);
+  border: 1px solid var(--color-border);
+  border-radius: 50%;
+  font-size: var(--text-xs);
+  font-weight: 600;
+  color: var(--color-text-muted);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  top: 2px;
+}
+
+.skill-steps li a {
+  color: var(--color-accent);
+  text-decoration: none;
+  border-bottom: 1px solid transparent;
+  transition: border-color var(--transition-fast);
+}
+
+.skill-steps li a:hover {
+  border-color: var(--color-accent);
+}
+
+.skill-steps li em {
+  color: var(--color-text);
+  font-style: normal;
+  background-color: var(--color-surface);
+  padding: 1px var(--space-2);
+  border-radius: 3px;
+  font-size: var(--text-sm);
+}
+
+
+/* ---- Instruction block ---- */
+.skill-instruction-block {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-top: var(--space-4);
+  /* Ensure content is clipped to the block boundary */
+  contain: layout;
+}
+
+.skill-instruction-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: var(--space-3) var(--space-4);
+  background-color: var(--color-surface);
+  border-bottom: 1px solid var(--color-border);
+}
+
+.skill-instruction-label {
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 500;
+}
+
+.copy-btn {
+  font-family: var(--font-sans);
+  font-size: var(--text-xs);
+  font-weight: 500;
+  letter-spacing: 0.03em;
+  color: var(--color-text-muted);
+  background: transparent;
+  border: 1px solid var(--color-border);
+  border-radius: 3px;
+  padding: var(--space-1) var(--space-3);
+  cursor: pointer;
+  transition: color var(--transition-fast),
+              border-color var(--transition-fast),
+              background-color var(--transition-fast);
+}
+
+.copy-btn:hover {
+  color: var(--color-text);
+  border-color: var(--color-text-muted);
+}
+
+.copy-btn.is-copied {
+  color: #2D6A35;
+  border-color: #2D6A35;
+  background-color: #EAF2EB;
+}
+
+.skill-instruction-text {
+  margin: 0;
+  padding: var(--space-6);
+  font-family: var(--font-sans);
+  font-size: var(--text-sm);
+  line-height: 1.7;
+  color: var(--color-text);
+  background-color: #FFFFFF;
+  white-space: pre-wrap;
+  word-break: break-word;
+  overflow-x: auto;
+}
+
+.skill-instruction-text code {
+  font-family: inherit;
+}
+
+
+/* ---- Checklist ---- */
+.skill-checklist {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.skill-checklist li {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  padding-left: var(--space-8);
+  position: relative;
+  max-width: 64ch;
+}
+
+.skill-checklist li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 3px;
+  width: 16px;
+  height: 16px;
+  border: 1.5px solid var(--color-border);
+  border-radius: 3px;
+  background-color: #FFFFFF;
+}
+
+
+/* ---- Example output block ---- */
+.skill-example-block {
+  border: 1px solid var(--color-border);
+  border-radius: 4px;
+  padding: var(--space-6);
+  background-color: #FFFFFF;
+  margin-top: var(--space-4);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.skill-example-label {
+  font-size: var(--text-xs);
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: var(--color-text-muted);
+  font-weight: 500;
+  margin-bottom: var(--space-2);
+}
+
+.skill-example-block p:not(.skill-example-label) {
+  font-size: var(--text-base);
+  color: var(--color-text-muted);
+  line-height: 1.7;
+  max-width: 64ch;
+}
+
+.skill-example-divider {
+  border: none;
+  border-top: 1px solid var(--color-border);
+  margin: 0;
+}
+
+
+/* ---- Back link ---- */
+.skill-back {
+  margin-top: var(--space-16);
+  padding-top: var(--space-8);
+  border-top: 1px solid var(--color-border);
+}
+
+.skill-back-link {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  letter-spacing: 0.02em;
+  border-bottom: 1px solid var(--color-border);
+  padding-bottom: 2px;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.skill-back-link:hover {
+  color: var(--color-text);
+  border-color: var(--color-text);
+}
+
+
+/* ---- Option labels (How to Use It) ---- */
+.skill-option-label {
+  font-size: var(--text-sm);
+  font-weight: 600;
+  color: var(--color-text);
+  margin-top: var(--space-6);
+  margin-bottom: var(--space-3);
+}
+
+/* Remove top margin on first option label */
+.skill-option-label:first-of-type {
+  margin-top: 0;
+}
+
+
+/* ---- Option A sublist (file paths) ---- */
+.skill-steps-sublist {
+  list-style: none;
+  padding: 0;
+  margin-top: var(--space-2);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.skill-steps-sublist li {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  line-height: 1.6;
+  padding-left: var(--space-4);
+  position: relative;
+  max-width: 56ch;
+}
+
+.skill-steps-sublist li::before {
+  content: '·';
+  position: absolute;
+  left: 0;
+  color: var(--color-border);
+}
+
+.skill-steps-sublist li strong {
+  color: var(--color-text);
+  font-weight: 500;
+}
+
+.skill-steps-sublist li em {
+  font-style: normal;
+  font-family: monospace;
+  font-size: var(--text-xs);
+  background-color: var(--color-surface);
+  padding: 1px var(--space-2);
+  border-radius: 3px;
+  color: var(--color-text);
+}
+
+/* ---- Option note (disclaimer below option steps) ---- */
+.skill-option-note {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  font-style: italic;
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-6);
+  max-width: 56ch;
+  line-height: 1.6;
+}

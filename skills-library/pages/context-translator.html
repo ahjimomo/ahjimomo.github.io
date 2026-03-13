@@ -1,0 +1,215 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Context Translator — AI Skills Library</title>
+  <meta name="description" content="Translate any text or document into English, then explain what it actually means — not just the words, but the tone, intent, and cultural nuance behind them." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lora:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <!-- Paths go up two levels: /skills-library/pages/ → root -->
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../css/library.css" />
+  <link rel="stylesheet" href="../css/skill-detail.css" />
+</head>
+
+<body>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a href="../../index.html" class="nav-home">Nicky Ng</a>
+      <ul class="nav-links" role="list">
+        <li><a href="../../index.html">About</a></li>
+        <li><a href="../../pages/projects.html">Projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+
+  <main>
+
+    <!-- Breadcrumb -->
+    <section class="page-section skill-breadcrumb-section" aria-label="Breadcrumb">
+      <div class="container">
+        <nav class="skill-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">AI Skills Library</a>
+          <span aria-hidden="true">›</span>
+          <span>Context Translator</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Skill header -->
+    <section class="page-section skill-header-section" aria-labelledby="skill-title">
+      <div class="container">
+        <div class="skill-meta-row">
+          <span class="skill-tag tag-use-case">Writing & Communication</span>
+          <span class="skill-tag tag-implementation">Reusable Instruction</span>
+        </div>
+        <h1 id="skill-title">Context Translator</h1>
+        <p class="skill-lead">
+          Translate any text or document into English, then explain what it actually means —
+          not just the words, but the tone, intent, and cultural nuance behind them.
+        </p>
+        <a
+          href="https://github.com/ahjimomo/ai-skills-library/tree/main/skills/context-translator"
+          class="skill-github-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on GitHub ↗</a>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Skill body -->
+    <section class="page-section skill-body" aria-label="Skill details">
+      <div class="container">
+
+        <!-- When to Activate -->
+        <div class="skill-section">
+          <h2>When to Activate</h2>
+          <ul class="skill-list">
+            <li>You have received an email, message, or document from an overseas colleague or partner and need to understand the full intent, not just the literal words</li>
+            <li>You are reading foreign news, articles, or reports and want to understand the cultural or political context behind the story</li>
+            <li>You are working across multilingual teams and need to quickly get up to speed on communications in another language</li>
+            <li>You want a second opinion on a translation you have already received to check for accuracy or missed nuance</li>
+            <li>You are preparing for a meeting or negotiation with counterparts from another country and want to understand the tone of prior communications</li>
+          </ul>
+        </div>
+
+        <!-- What It Does -->
+        <div class="skill-section">
+          <h2>What It Does</h2>
+          <p>Takes any text or uploaded document in a foreign language and works through it in two steps. First, it produces a clean, natural English translation — faithful to the original without being robotic. Then it explains what the content actually means in context: the tone, the intent, any cultural references or assumptions, and anything that could easily be misread across cultures.</p>
+        </div>
+
+        <!-- How to Use It -->
+        <div class="skill-section">
+          <h2>How to Use It</h2>
+
+          <p class="skill-option-label">Option A — For Claude users (via Skills)</p>
+          <ol class="skill-steps">
+            <li>Open the <a href="https://github.com/ahjimomo/ai-skills-library/tree/main/skills/context-translator" target="_blank" rel="noopener noreferrer">skill file on GitHub ↗</a> and download <em>SKILL.md</em></li>
+            <li>Place the file in your Claude skills folder — <em>~/.claude/skills/context-translator/SKILL.md</em> for personal use, or <em>.claude/skills/context-translator/SKILL.md</em> inside your project directory for project use</li>
+            <li>The skill will be available automatically in your next Claude conversation</li>
+          </ol>
+          <p class="skill-option-note">Note: This applies to personal and project use. Enterprise and plugin setups have separate configuration — check with your administrator.</p>
+
+          <p class="skill-option-label">Option B — Copy and paste the instruction</p>
+          <ol class="skill-steps">
+            <li>Copy the full instruction from the section below</li>
+            <li>Open a new conversation in your preferred AI tool and paste it in</li>
+            <li>Paste the text you want translated, or upload the file</li>
+            <li>If you need a different target language, say so at the start</li>
+          </ol>
+        </div>
+
+        <!-- The Instruction -->
+        <div class="skill-section">
+          <h2>The Instruction</h2>
+          <p class="skill-section-note">Copy the full text below and paste it into a new Claude conversation.</p>
+
+          <div class="skill-instruction-block">
+            <div class="skill-instruction-header">
+              <span class="skill-instruction-label">Instruction</span>
+              <button class="copy-btn" aria-label="Copy instruction to clipboard">
+                Copy
+              </button>
+            </div>
+            <pre class="skill-instruction-text"><code>You are a professional translator and cultural interpreter.
+
+When I give you a text or upload a file, work through it in two steps:
+
+**Step 1 — Translation**
+Translate the full content into English. The translation should be accurate and natural — faithful to the original meaning, not a word-for-word literal conversion. Preserve the tone of the original where possible (formal, casual, urgent, diplomatic, and so on).
+
+**Step 2 — Contextual Explanation**
+After the translation, provide a structured explanation covering:
+
+- **Tone and intent** — What is the author trying to communicate or achieve? What is the underlying message beyond the literal words?
+- **Cultural context** — Are there references, expressions, idioms, or assumptions in the original that may not be obvious to an English-speaking reader? Explain them plainly.
+- **What to watch out for** — Is there anything in this text that could easily be misread or misunderstood across cultures? Flag it clearly.
+
+**Important rules:**
+- If anything in the text is ambiguous or unclear even in the original language, flag it explicitly rather than guessing. Use the phrase "Flagged for review:" so it stands out.
+- Do not invent cultural context that cannot be reasonably inferred from the text itself.
+- If the text contains technical, legal, or regulatory language, note this and recommend that a subject matter expert reviews the translation before it is acted upon.
+- If I specify a different target language at the start of our conversation, translate into that language instead of English and apply the same contextual explanation in that language.</code></pre>
+          </div>
+        </div>
+
+        <!-- Guardrails & Accuracy Checks -->
+        <div class="skill-section">
+          <h2>Guardrails & Accuracy Checks</h2>
+
+          <p class="skill-subsection-label">Built into this skill</p>
+          <ul class="skill-list">
+            <li>Claude will flag ambiguous or unclear parts explicitly using "Flagged for review:" rather than guessing</li>
+            <li>Claude will not invent cultural context it cannot reasonably infer from the text provided</li>
+            <li>Claude will flag technical, legal, or regulatory language and recommend expert review</li>
+          </ul>
+
+          <p class="skill-subsection-label">Before you act on the output, check</p>
+          <ul class="skill-checklist">
+            <li>Does the translation read naturally, or does it feel robotic or word-for-word?</li>
+            <li>Are the cultural explanations grounded in the actual text, or do they feel like general assumptions?</li>
+            <li>Did Claude flag anything as ambiguous? If yes, resolve those points before using the output</li>
+            <li>Does the tone described in Step 2 match your instinct about the communication?</li>
+            <li>If the content is formal — a contract, policy, legal notice, or regulatory document — has a native speaker or subject matter expert reviewed it before you act on it?</li>
+          </ul>
+        </div>
+
+        <!-- Example Output -->
+        <div class="skill-section">
+          <h2>Example Output</h2>
+          <p class="skill-section-note">This is an illustration of what Claude will return. Your actual output will reflect the text you provide.</p>
+
+          <div class="skill-example-block">
+            <p class="skill-example-label">Translation</p>
+            <p>Thank you for your continued support of our partnership. We hope this message finds you well. We would like to take this opportunity to revisit the terms discussed at our last meeting, as some points require further alignment before we can proceed.</p>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">Contextual Explanation</p>
+            <ul class="skill-list">
+              <li><strong>Tone and intent:</strong> The message is polite but carries an implicit signal of concern. The phrase "require further alignment" is diplomatic language for disagreement or unresolved issues. The author is raising a problem without stating it directly, which is common in formal business communications in many East Asian and Southeast Asian contexts.</li>
+              <li><strong>Cultural context:</strong> Opening with gratitude and a wellbeing check before raising an issue is a face-saving convention — it softens what follows and signals that the relationship is valued even though a concern is being raised.</li>
+              <li><strong>What to watch out for:</strong> Do not read this as a routine check-in. The intent is to reopen negotiation on specific terms. Responding without acknowledging the underlying concern may be read as dismissive.</li>
+            </ul>
+          </div>
+        </div>
+
+        <!-- Back link -->
+        <div class="skill-back">
+          <a href="../index.html" class="skill-back-link">← Back to Skills Library</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <p class="footer-copy">© 2026 Nicky Ng</p>
+      <nav aria-label="Social links">
+        <ul class="footer-links" role="list">
+          <li><a href="https://www.linkedin.com/in/nickyngkw/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/ahjimomo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://public.tableau.com/app/profile/nicky.ng/vizzes" target="_blank" rel="noopener noreferrer">Tableau</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/skill-detail.js"></script>
+</body>
+</html>
