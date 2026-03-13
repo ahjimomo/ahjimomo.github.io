@@ -1,0 +1,139 @@
+/* ============================================================
+   projects.css — Styles specific to pages/projects.html
+   ============================================================ */
+
+/* Page header */
+.projects-header {
+  padding-top: var(--space-12);
+  padding-bottom: var(--space-8);
+}
+
+.projects-header h1 {
+  margin-bottom: var(--space-4);
+}
+
+.projects-intro {
+  font-size: var(--text-lg);
+  color: var(--color-text-muted);
+  max-width: 48ch;
+}
+
+
+/* Project list */
+.project-item {
+  display: grid;
+  grid-template-columns: 1fr;  /* single column on mobile */
+  gap: var(--space-3);
+  padding-block: var(--space-8);
+}
+
+/* Thin divider between project entries */
+.project-item + .project-item {
+  border-top: 1px solid var(--color-border);
+}
+
+
+/* Status badge */
+.project-status {
+  display: inline-block;
+  font-size: var(--text-xs);
+  font-family: var(--font-sans);
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+  padding: 3px var(--space-2);
+  border-radius: 3px;
+  font-weight: 500;
+}
+
+/* Each status has a distinct but muted colour */
+.status-active {
+  background-color: #EAF2EB;
+  color: #2D6A35;
+}
+
+.status-in-progress {
+  background-color: #FEF6E7;
+  color: #8A5A00;
+}
+
+.status-completed {
+  background-color: #F0F0EE;
+  color: #555250;
+}
+
+
+/* Project title */
+.project-title {
+  font-family: var(--font-serif);
+  font-size: var(--text-xl);
+  font-weight: 600;
+  margin-top: var(--space-3);
+  margin-bottom: var(--space-2);
+}
+
+.project-title a {
+  color: var(--color-text);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.project-title a:hover {
+  color: var(--color-accent);
+}
+
+
+/* Project description */
+.project-description {
+  color: var(--color-text-muted);
+  font-size: var(--text-base);
+  margin-bottom: var(--space-4);
+  max-width: 52ch;
+}
+
+
+/* Project links */
+.project-links {
+  display: flex;
+  align-items: center;
+  gap: var(--space-6);
+  flex-wrap: wrap;
+}
+
+.project-link-primary {
+  font-size: var(--text-sm);
+  color: var(--color-text);
+  text-decoration: none;
+  font-weight: 500;
+  border-bottom: 1px solid var(--color-text);
+  padding-bottom: 2px;
+  transition: color var(--transition-fast), border-color var(--transition-fast);
+}
+
+.project-link-primary:hover {
+  color: var(--color-accent);
+  border-color: var(--color-accent);
+}
+
+.project-link-secondary {
+  font-size: var(--text-sm);
+  color: var(--color-text-muted);
+  text-decoration: none;
+  transition: color var(--transition-fast);
+}
+
+.project-link-secondary:hover {
+  color: var(--color-text);
+}
+
+
+/* Desktop: two-column layout (status badge | content) */
+@media (min-width: 600px) {
+  .project-item {
+    grid-template-columns: 120px 1fr;
+    gap: var(--space-6);
+  }
+
+  .project-meta {
+    padding-top: var(--space-3); /* aligns badge with project title */
+  }
+}
