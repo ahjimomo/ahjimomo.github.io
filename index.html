@@ -6,9 +6,6 @@
   <title>Nicky Ng — Data & AI</title>
   <meta name="description" content="Nicky Ng — data analyst and AI enthusiast based in Singapore." />
 
-  <!-- Fonts: DM Sans (body) + Lora (headings) from Google Fonts -->
-  <!-- Two fonts, one request. The display=swap param stops invisible text
-       during load — the browser shows a fallback font immediately. -->
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link
@@ -22,11 +19,6 @@
 
 <body>
 
-  <!-- ============================================================
-       Navigation
-       aria-current="page" tells screen readers which link is active.
-       We set it manually on each page's own nav link.
-       ============================================================ -->
   <nav class="site-nav" aria-label="Main navigation">
     <div class="container">
       <a href="index.html" class="nav-home">Nicky Ng</a>
@@ -37,13 +29,8 @@
     </div>
   </nav>
 
-
-  <!-- ============================================================
-       Main content
-       ============================================================ -->
   <main>
 
-    <!-- Hero — name and one-line summary -->
     <section class="page-section hero-section" aria-label="Introduction">
       <div class="container">
         <p class="hero-label">Hello, I'm</p>
@@ -62,7 +49,6 @@
 
     <hr class="divider" />
 
-    <!-- About -->
     <section class="page-section" aria-labelledby="about-heading">
       <div class="container">
         <h2 id="about-heading">About</h2>
@@ -81,7 +67,6 @@
 
     <hr class="divider" />
 
-    <!-- Experience -->
     <section class="page-section" aria-labelledby="experience-heading">
       <div class="container">
         <h2 id="experience-heading">Experience</h2>
@@ -166,13 +151,47 @@
             </div>
           </article>
 
+          <article class="experience-item">
+            <div class="experience-meta">
+              <span class="experience-period">2017 — 2019</span>
+            </div>
+            <div class="experience-body">
+              <h3 class="experience-role">Co-Founder — Marketing & Sales</h3>
+              <p class="experience-company"><a href="https://www.facebook.com/printatease/" target="_blank" rel="noopener noreferrer">PEASE (Printatease)</a></p>
+              <p>
+                Co-founded a print and merchandise business from scratch with one partner
+                and a friend-investor. Built the client base through direct outreach,
+                landing partnerships with some of Singapore's largest mass participation
+                events — including the Standard Chartered Singapore Marathon, Great Eastern
+                Women Run, Super League Triathlon, and Sundown Marathon. Named an official
+                sponsor of the Yellow Ribbon Run 2018. Wound down in 2020.
+              </p>
+            </div>
+          </article>
+
+          <article class="experience-item">
+            <div class="experience-meta">
+              <span class="experience-period">2013 — 2015</span>
+            </div>
+            <div class="experience-body">
+              <h3 class="experience-role">Co-Founder — Sales & Events</h3>
+              <p class="experience-company">Tre Regno Entertainment</p>
+              <p>
+                Launched a corporate events business with two partners, building a client
+                roster of 30+ organisations within two years. Primarily focused on
+                corporate dinners and galas, with select work on larger-scale activations
+                — including expo experiences for Tata Consultancy Services and RICH's
+                Corporation. Transitioned ownership to partners in 2015.
+              </p>
+            </div>
+          </article>
+
         </div>
       </div>
     </section>
 
     <hr class="divider" />
 
-    <!-- Values -->
     <section class="page-section" aria-labelledby="values-heading">
       <div class="container">
         <h2 id="values-heading">Values</h2>
@@ -187,11 +206,6 @@
 
   </main>
 
-
-  <!-- ============================================================
-       Footer — same markup will be repeated across all pages.
-       Later, if you migrate to a framework, this becomes a component.
-       ============================================================ -->
   <footer class="site-footer" aria-label="Site footer">
     <div class="container">
       <p class="footer-copy">© 2026 Nicky Ng</p>
