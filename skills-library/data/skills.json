@@ -56,7 +56,7 @@
   {
     "id": "skill-007",
     "title": "Explain It Simply",
-    "description": "Break down any topic, concept, or document into a plain explanation suitable for a child or complete newcomer \u2014 no jargon, no assumed knowledge.",
+    "description": "Break down any topic, concept, or document into a plain explanation suitable for a complete newcomer — no jargon, no assumed knowledge.",
     "useCase": "Writing & Communication",
     "implementation": "Prompt",
     "slug": "explain-it-simply",
@@ -65,10 +65,19 @@
   {
     "id": "skill-008",
     "title": "Travel Planner",
-    "description": "Plan a trip end-to-end \u2014 itinerary, logistics, budget, and packing considerations \u2014 through a guided conversation that adapts to your travel style and constraints.",
+    "description": "Plan a trip end-to-end — itinerary, logistics, budget, and packing considerations — through a guided conversation that adapts to your travel style and constraints.",
     "useCase": "Strategy & Planning",
     "implementation": "Workflow",
     "slug": "travel-planner",
     "github": "#"
+  },
+  {
+    "id": "skill-009",
+    "title": "Resume & Cover Letter Builder",
+    "description": "Tailor your resume to a job description, optimise it for ATS screening, and get optional outreach materials — cover letter, email, or LinkedIn message.",
+    "useCase": "Writing & Communication",
+    "implementation": "Workflow",
+    "slug": "resume-cover-letter-builder",
+    "github": "https://github.com/ahjimomo/ai-skills-library/blob/main/skills/resume-and-cover-letter-builder/SKILL.md"
   }
 ]

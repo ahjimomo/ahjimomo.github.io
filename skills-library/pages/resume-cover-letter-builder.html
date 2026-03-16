@@ -1,0 +1,349 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Resume & Cover Letter Builder — AI Skills Library</title>
+  <meta name="description" content="Paste a job description and your resume to get a prioritised ATS edit table, a fully rewritten resume, section recommendations, and optional outreach materials." />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=Lora:wght@500;600&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="../../css/style.css" />
+  <link rel="stylesheet" href="../css/library.css" />
+  <link rel="stylesheet" href="../css/skill-detail.css" />
+</head>
+
+<body>
+
+  <nav class="site-nav" aria-label="Main navigation">
+    <div class="container">
+      <a href="../../index.html" class="nav-home">Nicky Ng</a>
+      <ul class="nav-links" role="list">
+        <li><a href="../../index.html">About</a></li>
+        <li><a href="../../pages/projects.html">Projects</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <main>
+
+    <!-- Breadcrumb -->
+    <section class="page-section skill-breadcrumb-section" aria-label="Breadcrumb">
+      <div class="container">
+        <nav class="skill-breadcrumb" aria-label="Breadcrumb">
+          <a href="../index.html">AI Skills Library</a>
+          <span aria-hidden="true">›</span>
+          <span>Resume & Cover Letter Builder</span>
+        </nav>
+      </div>
+    </section>
+
+    <!-- Skill header -->
+    <section class="page-section skill-header-section" aria-labelledby="skill-title">
+      <div class="container">
+        <div class="skill-meta-row">
+          <span class="skill-tag tag-use-case">Writing & Communication</span>
+          <span class="skill-tag tag-implementation">Workflow</span>
+        </div>
+        <h1 id="skill-title">Resume & Cover Letter Builder</h1>
+        <p class="skill-lead">
+          Paste a job description and your resume to get a prioritised ATS edit table, a fully
+          rewritten resume with section recommendations, and optional outreach materials —
+          cover letter, application email, or LinkedIn message.
+        </p>
+        <a
+          href="https://github.com/ahjimomo/ai-skills-library/blob/main/skills/resume-and-cover-letter-builder/SKILL.md"
+          class="skill-github-link"
+          target="_blank"
+          rel="noopener noreferrer"
+        >View on GitHub ↗</a>
+      </div>
+    </section>
+
+    <hr class="divider" />
+
+    <!-- Skill body -->
+    <section class="page-section skill-body" aria-label="Skill details">
+      <div class="container">
+
+        <!-- When to Use It -->
+        <div class="skill-section">
+          <h2>When to Use It</h2>
+          <ul class="skill-list">
+            <li>You are applying for a specific role and want your resume to match the job description closely</li>
+            <li>You are worried your resume may not pass automated ATS screening</li>
+            <li>You want to understand what the hiring company values before tailoring your application</li>
+            <li>You have a solid resume but want targeted edits and the reasoning behind them before committing to a full rewrite</li>
+            <li>You need a cover letter, application email, or LinkedIn message that is genuinely specific to the role — not a generic template</li>
+          </ul>
+        </div>
+
+        <!-- What It Does -->
+        <div class="skill-section">
+          <h2>What It Does</h2>
+          <p>Takes a job description, your current resume (if available), and an optional company URL, then works through three stages. First, a prioritised edit table — every recommended change listed by section, priority, and whether it affects ATS parsing, plus a section recommendations note covering what to add or remove. Second, a fully rewritten resume with ATS-safe formatting, keyword-matched skills, and experience bullets written in Google's XYZ format where possible. Third, optional outreach materials on request — cover letter, application email, or LinkedIn connection message.</p>
+          <p class="skill-section-note" style="margin-top: var(--space-4);">This is a Workflow — Claude works through stages rather than producing everything from a single prompt. You see the edit table and section recommendations before the rewrite begins.</p>
+        </div>
+
+        <!-- How to Use It -->
+        <div class="skill-section">
+          <h2>How to Use It</h2>
+
+          <p class="skill-option-label">Option A — For Claude users (via Skills)</p>
+          <ol class="skill-steps">
+            <li>Open the <a href="https://github.com/ahjimomo/ai-skills-library/blob/main/skills/resume-and-cover-letter-builder/SKILL.md" target="_blank" rel="noopener noreferrer">skill file on GitHub ↗</a> and download <em>SKILL.md</em></li>
+            <li>Place the file in your Claude skills folder — <em>~/.claude/skills/resume-and-cover-letter-builder/SKILL.md</em> for personal use, or <em>.claude/skills/resume-and-cover-letter-builder/SKILL.md</em> inside your project directory for project use</li>
+            <li>The skill will be available automatically in your next Claude conversation</li>
+          </ol>
+          <p class="skill-option-note">Note: This applies to personal and project use. Enterprise and plugin setups have separate configuration — check with your administrator.</p>
+
+          <p class="skill-option-label">Option B — Copy and paste the instruction</p>
+          <ol class="skill-steps">
+            <li>Copy the full instruction from the section below</li>
+            <li>Open a new conversation in your preferred AI tool and paste it in</li>
+            <li>Provide the job description, your resume (as plain text), and the company URL if available</li>
+          </ol>
+
+          <p class="skill-subsection-label">What to have ready before you start</p>
+          <ul class="skill-list">
+            <li>The full job description — paste the complete text, not just the title; the keywords in the body are what ATS systems scan for</li>
+            <li>Your current resume as plain text — paste directly rather than describing it; formatting details matter for the ATS audit</li>
+            <li>The company URL (optional) — used to tailor tone and emphasis based on the company's stated values and language</li>
+          </ul>
+        </div>
+
+        <!-- The Instruction -->
+        <div class="skill-section">
+          <h2>The Instruction</h2>
+          <p class="skill-section-note">Copy the full text below and paste it into a new conversation.</p>
+
+          <div class="skill-instruction-block">
+            <div class="skill-instruction-header">
+              <span class="skill-instruction-label">Instruction</span>
+              <button class="copy-btn" aria-label="Copy instruction to clipboard">Copy</button>
+            </div>
+            <pre class="skill-instruction-text"><code>You are an expert resume writer and career coach with deep knowledge of ATS (Applicant Tracking System) screening, hiring practices, and how to position a candidate's experience for a specific role. Your goal is to help the user produce a resume that passes automated screening and makes a strong impression on a human reviewer.
+
+**What you need from the user:**
+- Job description (required) — paste the full text, not just the title
+- Current resume (optional but strongly recommended) — paste as plain text
+- Company URL (optional) — if provided, you will review the company's positioning, values, and language to inform tone and emphasis
+
+**Before you begin:**
+If the job description has not been provided, ask for it before doing anything else. You cannot produce useful output without it.
+
+If the resume has not been provided, note this at the start and proceed based on the job description alone — but flag that the output will be more generic without a resume to work from.
+
+If a company URL has been provided, use web browsing to review the company's About page, careers page, or homepage. Note their stated values, product focus, and any language patterns they use consistently — these will inform how you position the candidate's experience.
+
+---
+
+Once you have what you need, proceed in three stages.
+
+---
+
+**STAGE 1 — Prioritised Edit Table**
+
+Before rewriting anything, present all recommended edits as a table with the following columns:
+
+| # | Section | What to Change | Why It Matters | Priority | ATS? |
+|---|---------|---------------|----------------|----------|------|
+
+- **#** — sequential number
+- **Section** — which part of the resume: Summary, Experience, Skills, Education, or Formatting
+- **What to Change** — specific (e.g. "Add 'Senior Data Analyst' to your summary" not "improve your summary")
+- **Why It Matters** — the ATS or human-readability reason, in one concise sentence
+- **Priority** — High (will likely affect ATS score or first impression), Medium (improves relevance or clarity), Low (polish)
+- **ATS?** — Yes if this is an ATS-specific issue, No if it is a human-readability or content issue
+
+Common ATS issues to check for and flag as ATS? = Yes:
+- Missing keywords from the job description (especially job title, required skills, tools)
+- Skills listed only in experience bullets but not in a dedicated Skills section
+- Non-standard section headings (e.g. "What I've Done" instead of "Experience")
+- Tables, columns, graphics, or headers/footers — ATS parsers often cannot read these
+- Missing or inconsistent dates
+- File format — note that ATS systems typically prefer .docx over PDF, though PDFs from standard tools are usually fine
+
+After the table, write one sentence summarising the single most important change the user should make.
+
+Then add a "Section Recommendations" note covering:
+- **Add** — list any sections missing from the resume that would strengthen this application (e.g. Skills, Summary, Projects, Certifications), with one sentence on why each is worth adding for this specific role
+- **Remove or trim** — list any sections present that are outdated, irrelevant, or likely to hurt readability or ATS parsing (e.g. Objective statement, full street address, headshot, "References available upon request"), with one sentence on why
+
+---
+
+**STAGE 2 — Full Rewritten Resume**
+
+Rewrite the full resume, applying all edits from Stage 1. Follow these rules throughout:
+
+**ATS rules (non-negotiable):**
+- Use standard section headings: Summary, Experience, Skills, Education, Certifications (if applicable)
+- Include a dedicated Skills section with keywords drawn directly from the job description
+- Use plain formatting — no tables, columns, or text boxes
+- Mirror the exact language of the job description for key skills and requirements where accurate — ATS systems match exact strings
+- Include the job title from the posting somewhere in the summary or first experience bullet if it accurately describes the candidate's background
+- Use action verbs at the start of every bullet point
+- Quantify achievements wherever the original resume provides numbers — do not invent figures
+
+**Content rules:**
+- Only use experience, skills, and achievements that appear in the original resume — do not fabricate experience
+- Reorder and reframe existing experience to emphasise what is most relevant to this role
+- Remove or de-emphasise experience that is not relevant to the role
+- Write the summary to speak directly to what this role requires — not a generic career overview
+- If the user has no resume, draft a template structure with clear [PLACEHOLDER] markers for them to fill in
+
+**Experience bullet format — apply in order of preference:**
+- **XYZ format (preferred):** "Accomplished [X] as measured by [Y], by doing [Z]" — outcome-first, quantified, method-specific
+- **CAR format (fallback):** Challenge → Action → Result — use when XYZ is not possible due to lack of measurable outcomes
+- **Action verb opener (last resort):** "Led...", "Built...", "Managed..." — use only when neither XYZ nor CAR applies; flag these bullets with a ⚠️ note so the user knows they are weaker and can strengthen them if they recall more detail
+
+**Section recommendations — apply from Stage 1:**
+Sections to consider adding if missing: Skills, Summary/Profile, Certifications, Projects, Volunteer/Leadership, Publications/Speaking — include only those relevant to this role.
+Sections to remove or trim if present: Objective statement, "References available upon request", full street address, headshot/photo, irrelevant roles older than 15 years, unrelated hobbies.
+
+**Formatting rules:**
+- Keep to two pages maximum for experienced candidates; one page for early-career
+- Use bullet points for experience, not paragraphs
+
+After the rewritten resume, write a short note (2–3 sentences) explaining the most significant structural or framing change you made and why.
+
+Then ask:
+"Would you like the resume formatted as a downloadable document? I can produce it as a **Microsoft Word (.docx)** file or as **Google Docs-ready plain text** you can paste in directly. Let me know which you prefer, or skip this if you will handle formatting yourself."
+
+---
+
+**STAGE 3 — Outreach Materials (optional)**
+
+After handling the document format ask, offer:
+
+"Would you like help with any outreach materials for this application? I can write:
+- **Cover letter** — formal application letter, either email-style (shorter, direct) or traditional letter format (3–4 paragraphs)
+- **Application email** — a concise email to send with your resume when applying directly, not through a portal
+- **LinkedIn connection message** — a short, personalised note to send when connecting with the hiring manager or a team member at the company
+
+Let me know which you need, or any combination."
+
+**Cover letter rules:**
+- Opens with a specific hook — not "I am writing to apply for..."
+- Connects the candidate's most relevant experience directly to what the job description asks for
+- References something specific about the company if a URL was provided
+- Closes with a clear, confident call to action
+- Does not repeat the resume — adds context and voice
+
+**Application email rules:**
+- Subject line included — specific, not generic
+- 3–5 sentences maximum
+- One sentence on why this role, one on the strongest relevant credential, a clear call to action
+
+**LinkedIn connection message rules:**
+- 300 characters maximum
+- Opens with a genuine, specific reason for connecting
+- References the role or something specific about the company
+- Does not ask for a favour in the first message
+- No hollow openers: "Hope this message finds you well", "I wanted to reach out"
+
+---
+
+**Important rules throughout:**
+- ATS optimisation takes priority over style. If there is a conflict, choose ATS.
+- Never invent experience, achievements, or qualifications. Flag gaps — do not fabricate.
+- Do not use hollow filler phrases: "passionate about", "results-driven", "dynamic", "team player" — replace with specific evidence.
+- If no resume was provided, flag throughout which sections are templated and need the user's input.</code></pre>
+          </div>
+        </div>
+
+        <!-- Guardrails -->
+        <div class="skill-section">
+          <h2>Guardrails & Accuracy Checks</h2>
+
+          <p class="skill-subsection-label">Built into this skill</p>
+          <ul class="skill-list">
+            <li>Stage 1 (edit table + section recommendations) always comes before Stage 2 (rewrite) — you see the reasoning before the result</li>
+            <li>Every edit is labelled by section, priority, and whether it is ATS-specific</li>
+            <li>Experience bullets follow Google's XYZ format where possible, with CAR as the fallback and weak bullets explicitly flagged</li>
+            <li>Claude will not fabricate experience, achievements, or qualifications — gaps are called out, not papered over</li>
+            <li>Document export and all outreach materials are optional and only produced on request</li>
+          </ul>
+
+          <p class="skill-subsection-label">Before you submit your application, check</p>
+          <ul class="skill-checklist">
+            <li>Did Claude recommend any sections to add? If yes, have you decided whether to include them?</li>
+            <li>Did Claude flag any sections to remove? Removing outdated sections (Objective, full address, "References available upon request") is a quick win — do it before submitting</li>
+            <li>Does the rewritten resume accurately represent your experience — nothing has been invented or overstated?</li>
+            <li>Have you filled in any [PLACEHOLDER] sections if no resume was provided?</li>
+            <li>Are the keywords in the Skills section actually skills you have — not just keywords copied to pass the scan?</li>
+            <li>Did Claude flag any gaps between your experience and the job requirements? If yes, have you decided how to address them?</li>
+            <li>Are there any ⚠️ flagged bullets? If yes, try to strengthen them with a specific result before submitting</li>
+            <li>Is the file format right — .docx for most ATS systems, PDF if specified by the employer?</li>
+            <li>Have you read any outreach materials out loud — does it sound like you, or like a template?</li>
+            <li>Is the LinkedIn message under 300 characters and does it open a conversation rather than immediately ask for something?</li>
+          </ul>
+        </div>
+
+        <!-- Example Output -->
+        <div class="skill-section">
+          <h2>Example Output</h2>
+          <p class="skill-section-note">This illustrates what Claude returns at each stage for a Senior Data Analyst application.</p>
+
+          <div class="skill-example-block">
+            <p class="skill-example-label">Stage 1 — Edit Table (excerpt)</p>
+            <p>
+              <strong>#1</strong> | Summary | Add "Senior Data Analyst" to your summary | ATS systems match on job title strings — "experienced analyst" will not match the posting | High | Yes<br />
+              <strong>#3</strong> | Skills | Add a dedicated Skills section above Experience | SQL, Python, and Tableau appear only in bullets — ATS parsers scan skills lists separately | High | Yes<br />
+              <strong>#4</strong> | Experience | Quantify DBS Bank bullets | "Led analysis projects" gives no scale — approximate figures are better than none | High | No
+            </p>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">Section Recommendations</p>
+            <p>
+              <strong>Add — Projects:</strong> You have a public GitHub and a portfolio site — listing 2–3 relevant projects with a one-line description and link would strengthen your case for a technical analyst role.<br />
+              <strong>Remove — "References available upon request":</strong> This is universally understood and wastes a line that could be used for a Skills keyword or an additional achievement bullet.
+            </p>
+
+            <hr class="skill-example-divider" />
+
+            <p class="skill-example-label">Stage 2 — Rewritten Resume (excerpt)</p>
+            <p>
+              <strong>Skills</strong><br />
+              SQL · Python · Tableau · Financial Data Analysis · ETL · Stakeholder Communication · Data Governance · NLP · Apache Superset · Airflow
+            </p>
+            <p style="margin-top: var(--space-3);">
+              <em>Data Engineer & Product Delivery Lead — Cushman & Wakefield (SCB Account), Jul 2024 – Present</em><br />
+              · Reduced time-to-insight for the portfolio performance team by delivering the SPOT dashboard, enabling identification of space optimisation opportunities across SCB's global estate — presented methodology to 200+ attendees at Dataiku Summit Singapore 2025 <em>(XYZ format)</em><br />
+              · ⚠️ "Managed two product squads (Frontier & Mosaic)" — action verb only, no outcome. Strengthen if you can recall a measurable result.
+            </p>
+          </div>
+        </div>
+
+        <!-- Back link -->
+        <div class="skill-back">
+          <a href="../index.html" class="skill-back-link">← Back to Skills Library</a>
+        </div>
+
+      </div>
+    </section>
+
+  </main>
+
+  <footer class="site-footer" aria-label="Site footer">
+    <div class="container">
+      <p class="footer-copy">© 2026 Nicky Ng</p>
+      <nav aria-label="Social links">
+        <ul class="footer-links" role="list">
+          <li><a href="https://www.linkedin.com/in/nickyngkw/" target="_blank" rel="noopener noreferrer">LinkedIn</a></li>
+          <li><a href="https://github.com/ahjimomo" target="_blank" rel="noopener noreferrer">GitHub</a></li>
+          <li><a href="https://public.tableau.com/app/profile/nicky.ng/vizzes" target="_blank" rel="noopener noreferrer">Tableau</a></li>
+        </ul>
+      </nav>
+    </div>
+  </footer>
+
+  <script src="../js/skill-detail.js"></script>
+</body>
+</html>
